@@ -11,22 +11,8 @@
 			<h2>Home</h2>
 			<br style= "clear: both;"/>
 		</div>
-		<div class="Pages">
-			<ul>
-				<li> 
-					<a href="index.html">Home</a>
-				</li>
-				<li> 
-					<a href="about.html">About</a>
-				</li>
-				<li> 
-					<a href="common cattle breeds.html">Common Cattle Breeds</a>
-				</li>
-				<li> 
-					<a href="contact info.html">Contact Information</a>
-				</li>
-			</ul>
-		</div>
+		
+		<?php include 'Menu.php'; ?>
 
 		<div class="Paragraph">
 			<img src="http://static.swap-bot.com/images/swaps/55393/swap.jpg" class ="Image" />

@@ -10,22 +10,9 @@
 			<h1>Welcome To MeatSuite</h1>
 			<h2>Contact Information</h2>
 		</div>
-		<div class="Pages">
-			<ul>
-				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/index.html">Home</a>
-				</li>
-				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/about.html">About</a>
-				</li>
-				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/common cattle breeds.html">Common Cattle Breeds</a>
-				</li>
-				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/contact info.html">Contact Information</a>
-				</li>
-			</ul>
-		</div>
+		
+		<?php include 'Menu.php'; ?>
+		
 		<div>
 			<table border="1">
 				<tr>
