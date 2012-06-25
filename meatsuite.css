@@ -1,0 +1,99 @@
+body{
+	background:#eee;
+}
+
+.Container{
+	margin: 0 auto 0 auto;
+	width: 670px;
+	background:white;
+	border-left:1px solid #8e4e24;
+	border-right:1px solid #8e4e24;
+	border-top:1px solid #8e4e24;
+	
+}
+
+.Pages{
+	border-bottom:2px solid #8e4e24;
+	margin-bottom:10px;
+	height:110px;
+}
+
+.Pages li {
+	display:inline;
+	/*background:#00dddd;*/
+	width: 300 px;
+	text-align:center;
+	margin: 0px 5px 0 5px;
+}
+
+.Pages ul{
+	width: 467 px;
+}
+
+.Pages a {
+	color:#8e4e24;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+}
+
+.Pages a:hover {
+	color:000000;
+}
+
+h1 {
+	text-align:left;
+	width:400px;
+	padding: 20px 0 5px 5px;
+	background-color: #8e4e24;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /*firefox*/
+	-webkit-border-radius: 10px; /*safari*/
+	color:white;
+	text-shadow: #000000 0.1em 0.1em 0.2em;
+	float:left;
+	margin-left:5px;
+	/*position:relative;*/
+}
+
+h2 {
+	color:#000000;
+	margin: 47px 5px 0 5px;
+	padding:0 0 30px 10px;
+	float:left;
+	font-style:italic;
+}
+
+.Image {
+	float:left;
+}
+
+.Paragraph p{
+	width : auto;
+	margin-right:5px;
+	margin-left:5px;
+}
+
+table, th, td {
+	border-collapse:collapse;
+	text-align:center;
+	padding:0 8px 0 8px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+table{
+	border-style:hidden;
+}
+
+th {
+	background:#8e4e24;
+	border:1px solid #8e4e24;
+	border-bottom:1px solid black;
+	color:white;
+	text-shadow: #000000 0.1em 0.1em 0.2em;
+}
+
+td {
+	border:1px solid black;
+}	
