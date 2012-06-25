@@ -7,7 +7,7 @@
 	<body>
 	<div class="Container">
 		<div id="Headers">
-			<h1><?php echo "Welcome To MeatSuite"; ?></h1>
+			<h1>Welcome To MeatSuite</h1>
 			<h2>Home</h2>
 			<br style= "clear: both;"/>
 		</div>
