@@ -15,7 +15,6 @@ body{
 .Pages{
 	border-bottom:2px solid #8e4e24;
 	margin-bottom:10px;
-	height:110px;
 }
 
 .Pages li {
@@ -28,6 +27,7 @@ body{
 
 .Pages ul{
 	width: 467 px;
+	margin: 0;
 }
 
 .Pages a {

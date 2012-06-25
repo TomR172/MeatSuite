@@ -7,22 +7,23 @@
 	<body>
 	<div class="Container">
 		<div id="Headers">
-			<h1>Welcome To MeatSuite</h1>
+			<h1><?php echo "Welcome To MeatSuite"; ?></h1>
 			<h2>Home</h2>
+			<br style= "clear: both;"/>
 		</div>
 		<div class="Pages">
 			<ul>
 				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/index.html">Home</a>
+					<a href="index.html">Home</a>
 				</li>
 				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/about.html">About</a>
+					<a href="about.html">About</a>
 				</li>
 				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/common cattle breeds.html">Common Cattle Breeds</a>
+					<a href="common cattle breeds.html">Common Cattle Breeds</a>
 				</li>
 				<li> 
-					<a href="file:///C:/Users/Tommy/Documents/Websites/MeatSuite/contact info.html">Contact Information</a>
+					<a href="contact info.html">Contact Information</a>
 				</li>
 			</ul>
 		</div>
