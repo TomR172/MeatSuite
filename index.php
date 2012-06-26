@@ -1,15 +1,28 @@
 <?php 
-	if (isset($_GET ["page"])){
-		$page = $_GET ["page"];
-	}
-	else{
-		$page = "Home";
-	}
-	if (isset($_GET ["pageFile"])){
-		$pageFile = $_GET ["pageFile"] . ".php";
-	}
-	else{
-		$pageFile = "home.php";
-	}
-	include "template.php";
+
+        $pages = array(
+            "home" => array(
+                "header" => "Home"                
+            ),
+            "about" => array(
+                "header" => "About"
+            ),
+            "contactInfo" => array(
+                "header" => "Contact Information"
+            ),
+            "commonCattleBreeds" => array(
+                "header" => "Common Cattle Breeds"
+            ),
+        );
+
+	if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+            $currentPage = $_GET["page"];                
+        } else {
+            $currentPage = "home";
+        }
+
+        $pageHeader = $pages[$currentPage]["header"];
+        $pageFile = $currentPage.".php";                
+        
+        include "template.php";
 	?>

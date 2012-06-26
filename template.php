@@ -8,7 +8,7 @@
 	<div class="Container">
 		<div id="Headers">
 			<h1>Welcome To MeatSuite</h1>
-			<h2><?php echo $page ?></h2>
+			<h2><?php echo $pageHeader ?></h2>
 			<br style= "clear: both;"/>
 		</div>
 		
