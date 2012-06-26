@@ -1,12 +1,15 @@
 <?php 
-	if (isset($_GET ["page"])):
+	if (isset($_GET ["page"])){
 		$page = $_GET ["page"];
-	else:
+	}
+	else{
 		$page = "Home";
-	if (isset($_GET ["pageFile"])):
+	}
+	if (isset($_GET ["pageFile"])){
 		$pageFile = $_GET ["pageFile"] . ".php";
-	else:
+	}
+	else{
 		$pageFile = "home.php";
-	endif;
+	}
 	include "template.php";
 	?>
