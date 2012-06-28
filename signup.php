@@ -1,5 +1,5 @@
 <h3>Sign up here</h3>
-<form id="Register">
+<form id="Register action="index.php?page=signup" method ="post">
 	<input type="text"> Farm <br />
 	<input type="text"> Owner <br />
 	<input type="text"> Address <br />
@@ -26,4 +26,7 @@
 	$beef = $_POST["Beef"];
 	$pork = $_POST["Pork"];
 	$chicken = $_POST["Chicken"];
+	mysql_select_db("db", $con);
+	mysql_query("INSERT INTO db (Farm, Owner, Address, Phone, Email, Website, Description, ORganic, Beef, Pork, Chicken)
+	VALUES ($farm, $owner, $address, $phone, $email, $website, $description, $organic, $beef, $pork, $chicken)");
 ?>
