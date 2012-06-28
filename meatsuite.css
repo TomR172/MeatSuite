@@ -4,7 +4,7 @@ body{
 
 .Container{
 	margin: 0 auto 0 auto;
-	width: 670px;
+	width: 700px;
 	background:white;
 	border-left:1px solid #8e4e24;
 	border-right:1px solid #8e4e24;
@@ -14,7 +14,7 @@ body{
 
 .Pages{
 	border-bottom:2px solid #8e4e24;
-	margin-bottom:20px;
+	margin-bottom:15px;
 }
 
 .currentPage {
@@ -24,13 +24,12 @@ body{
 .Pages li {
 	display:inline;
 	/*background:#00dddd;*/
-	width: 300 px;
+	width: 500 px;
 	text-align:center;
 	margin: 0px 5px 0 5px;
 }
 
 .Pages ul{
-	width: 467 px;
 	margin: 0;
 }
 
@@ -67,6 +66,10 @@ h2 {
 	float:left;
 }
 
+h3 {
+	margin: 0 0 0 5px;
+}
+
 .Image {
 	float:left;
 }
@@ -100,3 +103,11 @@ th {
 td {
 	border:1px solid black;
 }	
+
+#Register{
+	border-right:1px solid #8e4e24;
+	border:1px solid black;
+	margin:0 auto 0 auto;
+	width:250px;
+	
+}

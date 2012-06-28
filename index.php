@@ -13,6 +13,12 @@
             "commonCattleBreeds" => array(
                 "header" => "Common Cattle Breeds"
             ),
+			"farms" => array(
+				"header" => "Farms"
+			), 
+			"signup" => array (
+				"header" => "Sign Up"
+			)
         );
 
 	if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
