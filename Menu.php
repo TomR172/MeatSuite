@@ -1,6 +1,6 @@
 <div class="Pages">
     <ul>
-	<?php foreach($pages as $page => $values) : ?>
+	<?php foreach($topMenu as $page => $values) : ?>
 		<li>
 			<a class=
 				"<?php if($page == $currentPage) echo 'currentPage'; ?>"
