@@ -11,10 +11,12 @@
 	/*Farm ID is a number*/
 	
 	mysql_select_db("db", $con);
+	DROP DATABASE db;
+	CREATE DATABASE db;
 
 	
-	if(mysql_query("ALTER TABLE farms Drop FarmName VARCHAR(30)")){
+/*	if(mysql_query("ALTER TABLE farms Drop FarmName VARCHAR(30)")){
 				echo "Altered table"; }
 	else { 
-		echo mysql_error(); }
+		echo mysql_error(); }*/
 ?>

@@ -2,6 +2,6 @@
 <p>You can learn more about Tompkins Farms at the following sites: </p>
 <ul>
 	<li>
-		<a href ="http://ccetompkins.org/agriculture/buy-local/local-meats" class ="Sites">Cooperative Extension Tompkins County</a>
+		<a href ="http://ccetompkins.org/agriculture/buy-local/local-meats" class ="sites">Cooperative Extension Tompkins County</a>
 	</li>
 </ul>

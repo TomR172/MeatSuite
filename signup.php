@@ -1,8 +1,14 @@
 <?php 
     if(!empty($_POST)) {      
-	$farmName = $_POST["farmName"];
-	$firstName = $_POST["firstName"];
-	$lastName = $_POST["lastName"];
+	$farmName = $_POST["FarmName"];
+	$owner = $_POST["Owner"];
+	$address = $_POST["Address"];
+	$phone = $_POST["Phone"];
+	$email = $_POST["Email"];
+	$website = $_POST["Website"];
+	$organic = $_POST["Organic"];
+	$products = $_POST["Products"];
+	
 
         $con = mysql_connect("localhost", "root");
 	if (!$con) {
@@ -10,7 +16,7 @@
 	}
         
 	mysql_select_db("db", $con);
-	if(mysql_query("INSERT INTO farms (FarmName, FirstName, LastName) VALUES ('$farmName', '$firstName', '$lastName')", $con)) {
+	if(mysql_query("INSERT INTO farms (Farm, Owner, Address, Phone, Email, Website, Organic, Products) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$products' )", $con)) {
             echo "You've been signed up!";
         } else {
             echo "Error: ".mysql_error();
@@ -21,9 +27,14 @@
 
 <h3>Sign up here</h3>
 <form id="Register" action="index.php?page=signup" method ="post">
-	Farm Name <input type="text" name="farmName" /><br />
-	First Name <input type="text" name="firstName" /><br />
-	Last Name <input type="text" name="lastName" /><br />
+	Farm <input type="text" name="FarmName" /><br />
+	Owner <input type="text" name="Owner" /><br />
+	Address <input type="text" name="Address" /><br />
+	Phone <input type="text" name="Phone" /><br />
+	Email <input type="text" name="Email" /><br />
+	Website <input type="text" name="Website" /><br />
+	Organic <input type="text" name="Organic" /><br />
+	Products <input type="text" name="Products" /><br />
 	
 	<h3>Please check the ones you sell</h3>
 	<input type="checkbox" /> Beef<br />

@@ -17,16 +17,20 @@
 			<th>Phone</th>
 			<th>Email</th>
 			<th>Website</th>
-			<th>Description</th>
 			<th>Organic</th>
 			<th>Products</th>
 		</tr>
 
 		<?php while($row = mysql_fetch_array($result)){?>
 			<tr>
-				<td> <?php echo $row['FarmName'] ?> </td>
-				<td> <?php echo $row['FirstName'] ?></td>
-				<td> <?php echo $row['LastName'] ?></td>
+				<td> <!---id = "farm"---> <?php echo $row['Farm'] ?> </td>
+				<td> <?php echo $row['Owner'] ?></td>
+				<td> <?php echo $row['Address'] ?></td>
+				<td> <?php echo $row['Phone'] ?></td>
+				<td> <?php echo $row['Email'] ?></td>
+				<td> <?php echo $row['Website'] ?></td>
+				<td> <?php echo $row['Organic'] ?></td>
+				<td> <?php echo $row['Products'] ?></td>
 			</tr>
 		<?php } ?>
 	</table>
