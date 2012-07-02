@@ -12,9 +12,6 @@
             "contactInfo" => array(
                 "header" => "Contact Information"
             ),
-            "commonCattleBreeds" => array(
-                "header" => "Common Cattle Breeds"
-            ),
 			"farms" => array(
 				"header" => "Farms"
 			), 
@@ -24,6 +21,10 @@
 			
 			"profile" => array (
 				"header" => "Profile"
+			),
+			
+			"learnmore" => array (
+				"header" => "Learn More"
 			)
         );
 		
@@ -37,35 +38,29 @@
             "contactInfo" => array(
                 "header" => "Contact Information"
             ),
-            "commonCattleBreeds" => array(
-                "header" => "Common Cattle Breeds"
-            ),
 			"farms" => array(
 				"header" => "Farms"
 			), 
 			"signup" => array (
 				"header" => "Sign Up"
-			),
-        );
-
-		$farmArray = array(
-            "joesfarm" => array(
-                "header" => "Joes Turkey"                
-            ),
-            "thepultryshop" => array(
-                "header" => "The Pultry Shop"
-            ),
-            "landys" => array(
-                "header" => "Landys Butcher Shop"
-            )
+			),			
+			"learnmore" => array (
+				"header" => "Learn More"
+			)
         );
 		
 		
-	if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+		if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
             $currentPage = $_GET["page"];                
         } else {
             $currentPage = "home";
         }
+		
+	/*if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+            $currentPage = $_GET["page"];                
+        } else {
+            $currentPage = "home";
+        }*/
 
         $pageHeader = $pages[$currentPage]["header"];
         $pageFile = $currentPage.".php";                

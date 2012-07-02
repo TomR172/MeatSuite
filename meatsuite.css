@@ -70,8 +70,14 @@ h3 {
 	margin: 0 0 0 5px;
 }
 
-.Image {
+.ImageCow {
 	float:left;
+	margin: 5px 5px 5px 5px;
+}
+
+.ImageMeat {
+	float:right;
+	margin: 5px 5px 5px 5px;
 }
 
 .Paragraph p{
@@ -113,6 +119,24 @@ td {
 }
 
 .companies {
+	text-decoration:none;
+	color:#000;
+}
+
+#farm {
+	color:red;
+}
+
+#here{
+	text-decoration:none;
+	color:#000;
+}
+
+#here:hover, .sites:hover{
+	font-weight:bold;
+}
+
+.sites{
 	text-decoration:none;
 	color:#000;
 }
