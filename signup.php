@@ -33,13 +33,7 @@
 	}
 	
 
-        $con = mysql_connect("localhost", "root");
-	if (!$con) {
-		die ('Could not connect: ' . mysql_error());
-	}
-        
-	mysql_select_db("db", $con);
-	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )", $con)) {
+	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken' )")) {
             echo "You've been signed up!";
         } else {
             echo "Error: ".mysql_error();
@@ -58,10 +52,10 @@
 	Website <input type="text" name="Website" /><br />
 	
 	<h3>Please check the ones you sell</h3>
-	<input type="checkbox" /> Beef<br />
-	<input type="checkbox" /> Pork<br />
-	<input type="checkbox" /> Chicken<br />
-	<input type="checkbox" /> Organic<br />
+	<input type="checkbox" name="Beef" /> Beef<br />
+	<input type="checkbox" name="Pork" /> Pork<br />
+	<input type="checkbox" name="Chicken" /> Chicken<br />
+	<input type="checkbox" name="Organic" /> Organic<br />
 	
 	<h3>Add a description of your farm</h3>
 	<textarea name="desc" cols="40" rows="10">
