@@ -50,9 +50,9 @@
 	Website <input type="text" name="Website" /><br />
 	
 	<h3>Please check the ones you sell</h3>
-	<input type="checkbox" /> Beef<br />
-	<input type="checkbox" /> Pork<br />
-	<input type="checkbox" /> Chicken<br />
-	<input type="checkbox" /> Organic<br />
+	<input type="checkbox" name="Beef" /> Beef<br />
+	<input type="checkbox" name="Pork" /> Pork<br />
+	<input type="checkbox" name="Chicken" /> Chicken<br />
+	<input type="checkbox" name="Organic" /> Organic<br />
 	<input type="submit" value = "Submit" />
 </form>
