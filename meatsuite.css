@@ -4,7 +4,7 @@ body{
 
 .Container{
 	margin: 0 auto 0 auto;
-	width: 700px;
+	width: 960px;
 	background:white;
 	border-left:1px solid #8e4e24;
 	border-right:1px solid #8e4e24;
@@ -61,6 +61,7 @@ h1 {
 
 h2 {
 	color:#000000;
+	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
 	margin: 47px 5px 0 5px;
 	padding:0 0 30px 10px;
 	float:left;
@@ -123,8 +124,13 @@ td {
 	color:#000;
 }
 
-#farm {
-	color:red;
+.farm a{
+	color:#000;
+	text-decoration:none;
+}
+
+.farm a:hover {
+	color:#555;
 }
 
 #here{
@@ -139,4 +145,6 @@ td {
 .sites{
 	text-decoration:none;
 	color:#000;
+	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
+	margin:0 0 0 5px;
 }

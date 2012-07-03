@@ -9,13 +9,15 @@ USE `db`;
 
 CREATE TABLE IF NOT EXISTS `farms` (
   `FarmName` varchar(30) DEFAULT NULL,
-  `Owner` varchar(30) DEFAULT NULL,
-  `Address` varchar(30) DEFAULT NULL
-  `Phone` varchar(30) DEFAULT NULL
-  `Email` varchar(30) DEFAULT NULL
-  `Website` varchar(30) DEFAULT NULL
-  `Organic` varchar(30) DEFAULT NULL
-  `Products` varchar(30) DEFAULT NULL
+   ALTER TABLE 'farms' ADD`owner` varchar(30) NOT NULL,
+   ALTER TABLE 'farms' ADD`address` varchar(30) NOT NULL,
+   ALTER TABLE 'farms' ADD`phone` varchar(30) NOT NULL,
+   ALTER TABLE 'farms' ADD`email` varchar(30) NOT NULL,
+   ALTER TABLE 'farms' ADD`website` varchar(30) NOT NULL,
+   ALTER TABLE 'farms' ADD`organic` tinyint(1) NOT NULL,
+   ALTER TABLE 'farms' ADD`beef` tinyint(1) NOT NULL,
+   ALTER TABLE 'farms' ADD`pork` tinyint(1) NOT NULL,
+   ALTER TABLE 'farms' ADD`chicken` tinyint(1) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

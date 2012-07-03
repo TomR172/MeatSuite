@@ -11,8 +11,8 @@
 	/*Farm ID is a number*/
 	
 	mysql_select_db("db", $con);
-	DROP DATABASE db;
-	CREATE DATABASE db;
+	mysql_query("DROP DATABASE 'db'");
+	mysql_query("CREATE DATABASE 'db'");
 
 	
 /*	if(mysql_query("ALTER TABLE farms Drop FarmName VARCHAR(30)")){
