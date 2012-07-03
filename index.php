@@ -2,6 +2,13 @@
 	error_reporting(E_ALL);
         ini_set('display_errors', '1');
         
+        $con = mysql_connect("localhost", "root");
+	if (!$con) {
+		die ('Could not connect: ' . mysql_error());
+	}
+        
+	mysql_select_db("db", $con);
+        
         $pages = array(
             "home" => array(
                 "header" => "Home"                
@@ -28,7 +35,7 @@
 			)
         );
 		
-		$topMenu = array(
+        $topMenu = array(
             "home" => array(
                 "header" => "Home"                
             ),
@@ -50,18 +57,12 @@
         );
 		
 		
-		if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+        if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
             $currentPage = $_GET["page"];                
         } else {
             $currentPage = "home";
         }
 		
-	/*if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
-            $currentPage = $_GET["page"];                
-        } else {
-            $currentPage = "home";
-        }*/
-
         $pageHeader = $pages[$currentPage]["header"];
         $pageFile = $currentPage.".php";                
         

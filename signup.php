@@ -31,14 +31,7 @@
 		$organic=0;
 	}
 	
-
-        $con = mysql_connect("localhost", "root");
-	if (!$con) {
-		die ('Could not connect: ' . mysql_error());
-	}
-        
-	mysql_select_db("db", $con);
-	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken' )", $con)) {
+	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken' )")) {
             echo "You've been signed up!";
         } else {
             echo "Error: ".mysql_error();
