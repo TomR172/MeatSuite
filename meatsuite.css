@@ -111,11 +111,11 @@ td {
 	border:1px solid black;
 }	
 
-#Register{
+.Register{
 	border-right:1px solid #8e4e24;
 	border:1px solid black;
 	margin:0 auto 0 auto;
-	width:250px;
+	width:345px;
 	
 }
 

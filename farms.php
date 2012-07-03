@@ -29,7 +29,7 @@
 		<?php while($row = mysql_fetch_array($result)){?>
 			<tr>
 				<td class="farm"> 
-					<a href="index.php?page=profile" >
+					<a href="index.php?page=profile&farm=<?php echo $row['FarmName'] ?>" >
 					<?php echo $row['FarmName'] ?> 
 					</a>
 				</td>

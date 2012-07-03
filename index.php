@@ -25,6 +25,10 @@
 			
 			"learnmore" => array (
 				"header" => "Learn More"
+			),
+			
+			"description" => array (
+				"header" => "Sign Up"
 			)
         );
 		

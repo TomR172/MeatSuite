@@ -6,6 +6,7 @@
 	$phone = $_POST["Phone"];
 	$email = $_POST["Email"];
 	$website = $_POST["Website"];
+	$desc = $_POST["desc"];
 	if(isset($_POST['Beef'])){
 		$beef = 1;
 	}
@@ -38,7 +39,7 @@
 	}
         
 	mysql_select_db("db", $con);
-	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken' )", $con)) {
+	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )", $con)) {
             echo "You've been signed up!";
         } else {
             echo "Error: ".mysql_error();
@@ -48,7 +49,7 @@
 ?>
 
 <h3>Sign up here</h3>
-<form id="Register" action="index.php?page=signup" method ="post">
+<form class="Register" action="index.php?page=signup" method ="post">
 	Farm <input type="text" name="FarmName" /><br />
 	Owner <input type="text" name="Owner" /><br />
 	Address <input type="text" name="Address" /><br />
@@ -61,5 +62,10 @@
 	<input type="checkbox" /> Pork<br />
 	<input type="checkbox" /> Chicken<br />
 	<input type="checkbox" /> Organic<br />
-	<input type="submit" value = "Submit" />
+	
+	<h3>Add a description of your farm</h3>
+	<textarea name="desc" cols="40" rows="10">
+		No more than 1000 characters
+	</textarea><br>
+	<input type="submit" value = "Submit"/>
 </form>
