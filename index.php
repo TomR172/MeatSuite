@@ -2,7 +2,7 @@
 	error_reporting(E_ALL);
         ini_set('display_errors', '1');
         
-        $con = mysql_connect("localhost", "root");
+        $con = mysql_connect("localhost", "root", "root");
 	if (!$con) {
 		die ('Could not connect: ' . mysql_error());
 	}
@@ -27,35 +27,14 @@
 			),
 			
 			"profile" => array (
-				"header" => "Profile"
+				"header" => "Profile",
+                                "showInMenu" => false
 			),
 			
 			"learnmore" => array (
 				"header" => "Learn More"
 			)
         );
-		
-        $topMenu = array(
-            "home" => array(
-                "header" => "Home"                
-            ),
-            "about" => array(
-                "header" => "About"
-            ),
-            "contactInfo" => array(
-                "header" => "Contact Information"
-            ),
-			"farms" => array(
-				"header" => "Farms"
-			), 
-			"signup" => array (
-				"header" => "Sign Up"
-			),			
-			"learnmore" => array (
-				"header" => "Learn More"
-			)
-        );
-		
 		
         if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
             $currentPage = $_GET["page"];                
