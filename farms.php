@@ -1,6 +1,6 @@
 <html>
 <?php
-	$result = mysql_query("SELECT * FROM farms");
+	$result = query("SELECT * FROM farms");
 ?>
 	<table border='1'>
 		<tr>

@@ -9,6 +9,8 @@
         
 	mysql_select_db("db", $con);
         
+        include('functions.php');
+        
         $pages = array(
             "home" => array(
                 "header" => "Home"                
