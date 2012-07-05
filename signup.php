@@ -33,10 +33,10 @@
 	}
 	
 
-	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )")) {
+	if(query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )")) {
             echo "You've been signed up!";
         } else {
-            echo "Error: ".mysql_error();
+            echo "You could not be signed up";
         }
     }
     

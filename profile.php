@@ -1,6 +1,6 @@
 <?php
 	
-	$desc = mysql_query("SELECT * FROM farms WHERE FarmName='".$_GET['farm']."'");
+	$desc = query("SELECT * FROM farms WHERE FarmName='".$_GET['farm']."'");
 	$row = mysql_fetch_array($desc);?>
 	
 	<h2 id="ShopName">Owner: <?php echo $row['owner']; ?> </h2>

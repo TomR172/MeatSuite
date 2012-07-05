@@ -11,7 +11,7 @@
 			<h2>
 				<?php
 					if ($pageHeader == 'Profile'){
-						$desc = mysql_query("SELECT * FROM farms WHERE FarmName='".$_GET['farm']."'");
+						$desc = query("SELECT * FROM farms WHERE FarmName='".$_GET['farm']."'");
 						$row = mysql_fetch_array($desc);
 						echo $row['FarmName'];
 					}
