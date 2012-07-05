@@ -176,3 +176,43 @@ td {
 	/*position:relative;
 	bottom:5px;*/
 }
+
+.subMenu{
+	margin:5px 30px 10px 0;
+	float:left;
+	clear:both;
+}
+
+.subMenu li {
+	text-align:center;
+	text-decoration:none;
+	color:#000;
+	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
+	margin:0 0 0 5px;
+}
+
+.subMenu ul{
+	margin: 0;
+}
+
+.subMenu a {
+	color:#000000;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+}
+
+.subMenu a:hover {
+	color:#0000dd;
+}
+
+.title, .subtitle{
+	text-align:center;
+	font-weight:bold;
+	text-decoration:underline;
+	color:#b82820;
+}
+
+.firstWord{
+	font-weight:bold;
+}

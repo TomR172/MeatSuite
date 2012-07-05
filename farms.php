@@ -22,7 +22,7 @@
 		<?php while($row = mysql_fetch_array($result)){?>
 			<tr>
 				<td class="farm"> 
-					<a href="index.php?page=profile&id=<?php echo $row['key'] ?>" >
+					<a href="index.php?page=profile&id=<?php echo $row['id'] ?>" >
 					<?php echo $row['FarmName'] ?> 
 					</a>
 				</td>

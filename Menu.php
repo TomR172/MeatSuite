@@ -5,7 +5,7 @@
 		<li>
 			<a class=
 				"<?php if($page == $currentPage) echo 'currentPage'; ?>"
-				href="index.php?page=<?php echo $page; ?>"><?php echo $values["header"]; ?>
+				href="index.php?page=<?php echo $page; if ($page == 'learnmore'){ echo '&tab=0';} ?>"><?php echo $values["header"]; ?>
 			</a>
 		</li>
             <?php endif; ?>
