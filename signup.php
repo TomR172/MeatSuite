@@ -1,12 +1,19 @@
 <?php 
     if(!empty($_POST)) {      
 	$farmName = $_POST["FarmName"];
+	$farmName = mysql_real_escape_string($farmName);
 	$owner = $_POST["Owner"];
+	$owner = mysql_real_escape_string($owner);
 	$address = $_POST["Address"];
+	$address = mysql_real_escape_string($address);
 	$phone = $_POST["Phone"];
+	$phone = mysql_real_escape_string($phone);
 	$email = $_POST["Email"];
+	$email = mysql_real_escape_string($email);
 	$website = $_POST["Website"];
+	$website = mysql_real_escape_string($website);
 	$desc = $_POST["desc"];
+	$desc = mysql_real_escape_string($desc);
 	if(isset($_POST['Beef'])){
 		$beef = 1;
 	}
@@ -33,7 +40,7 @@
 	}
 	
 
-	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )")) {
+	if(mysql_query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description, key) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc', '$key' )")) {
             echo "You've been signed up!";
         } else {
             echo "Error: ".mysql_error();
