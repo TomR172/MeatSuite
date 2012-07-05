@@ -178,9 +178,11 @@ td {
 }
 
 .subMenu{
-	margin:5px 30px 10px 0;
+	margin:-15px 30px 0px 0px;
+	padding: 0px 9px 0 0px;
 	float:left;
 	clear:both;
+	border-right: 2px solid black;
 }
 
 .subMenu li {
@@ -192,7 +194,8 @@ td {
 }
 
 .subMenu ul{
-	margin: 0;
+	height:auto;
+	padding: 0px 10px 10px 20px;
 }
 
 .subMenu a {
@@ -215,4 +218,10 @@ td {
 
 .firstWord{
 	font-weight:bold;
+}
+
+.marginize{
+	margin: 0 0 -30px 200px;
+	padding: 0px 0 10px 25px;
+	border-left: 2px solid black;
 }
