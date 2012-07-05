@@ -28,7 +28,7 @@
 			
 			"profile" => array (
 				"header" => "Profile",
-                                "showInMenu" => false
+                "showInMenu" => false
 			),
 			
 			"learnmore" => array (
@@ -36,7 +36,8 @@
 			),
 			
 			"description" => array (
-				"header" => "Sign Up"
+				"header" => "Sign Up",
+                "showInMenu" => false
 			)
         );
 		

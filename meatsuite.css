@@ -148,3 +148,31 @@ td {
 	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
 	margin:0 0 0 5px;
 }
+
+#ShopName{
+	text-align:right;
+	width:200px;
+	padding: 20px 5px 5px 0;
+	background-color: #ddd;
+	border-radius: 10px;
+	-moz-border-radius: 10px; /*firefox*/
+	-webkit-border-radius: 10px; /*safari*/
+	color:black;
+	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
+	float:left;
+	margin:0 5px 0 5px;
+	position:absolute;
+
+}
+
+#profileTable{
+	float:left;
+	margin: 65px 5px 5px 5px;
+	position:relative;
+	bottom:5px;
+}
+
+.under{
+	/*position:relative;
+	bottom:5px;*/
+}
