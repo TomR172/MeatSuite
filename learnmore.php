@@ -7,7 +7,13 @@
 			<a href="index.php?page=learnmore&tab=2" > Common Cattle Breeds </a>
 		</li>
 		<li>
-			<a href="index.php?page=learnmore&tab=3" > Third Site </a>
+			<a href="index.php?page=learnmore&tab=3" > Descriptions of Types of Livestock Feeds </a>
+		</li>
+		<li>
+			<a href="index.php?page=learnmore&tab=4" > Understanding Weights and Pricing </a>
+		</li>
+		<li>
+			<a href="index.php?page=learnmore&tab=5" > USDA and NYS Regulations</a>
 		</li>
     </ul>	
 </div>
@@ -64,7 +70,50 @@
 </div>';
 }
 	else if ($tab==3){
-		echo '<p>TAB THREE </p>';
+		echo '<h3 class="title">DESCRIPTIONS OF TYPES OF LIVESTOCK FEEDS</h3>
+<div class="marginize">
+
+<p><div class="firstWord">Hay</div>Hay which is stored "wet" and fermented. Usually seen as long white tubes under white plastic. Ensiled hay.</p>
+
+<p><div class="firstWord">Haylage</div>Dried grasses and legumes stored for feed.</p>
+
+<p><div class="firstWord">Bailage</div>Large wrapped bales of hay stored "wet" and fermented. Ensiled hay.</p>
+
+<p><div class="firstWord">Silage, corn silage</div>The entire corn plant chopped and stored "wet", fermented. Ensiled corn plants.</p>
+
+<p><div class="firstWord">Shelled corn</div>Dry whole kernel corn.</p>
+
+<p><div class="firstWord">Cracked corn</div>Dry, whole kernel corn which is ground into smaller pieces.</p>
+</div>';
+}
+
+	else if ($tab==4){
+		echo '<h3 class="title">UNDERSTANDING WEIGHTS AND PRODUCTS</h3>
+<h4 class="subtitle">Learn about Local Meats Weights and Pricing</h4>
+<div class="marginize">
+
+Farmers may discuss three different weights with consumers: Live weight, hot carcass weight (HCW) (also called hanging weight), and Final weight (also called retail weight and take home weight).
+
+<p><div class="firstWord">Live Weight</div>The weight of the entire, living animal.</p>
+
+<p><div class="firstWord">HCW</div>The weight taken immediately after slaughter, but before final trim.  HCW ˜is approximately 60% of live weight</p>
+
+<p><div class="firstWord">Final Weight</div>The "take home" weight after trim and cutting into useable portions.  Final weight  ˜ 65% of HCW.</p>
+</div>';
+}
+	else if ($tab==5){
+		echo '<h3 class="title">USDA AND NYS REGULATIONS</h3>
+<h4 class="subtitle">USDA and NYS Regulations for meat sales</h4>
+<div class="marginize">
+
+<p><div class="firstWord">USDA Inspected Facility </div>Processed livestock (beef, pork, sheep, goat) meat can be sold to the public.</p>
+
+<p><div class="firstWord">NYS 5A</div> Can kill & process livestock (not to be sold). So, if you buy a live animal from a farmer, it can processed for your consumption.  Also can process farm-raised game (bison, venison) and poultry for legal resale.</p>
+
+<p><div class="firstWord">NYS 20C</div>Can process (butcher) & sell livestock which were killed at USDA inspected facility.  Sales are essentially limited to retail (farm to consumer), not wholesale.</p>
+
+<p><div class="firstWord">NYS 20C</div>Can slaughter and sell poultry, fowl, and rabbits they raise (Limited to 1,000 birds/year). (Whole bird only, no cuts).</p>
+</div>';
 }
 	else {
 		echo '<p>You can learn more about Tompkins Farms from the links to the left </p>';

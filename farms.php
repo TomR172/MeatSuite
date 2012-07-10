@@ -1,4 +1,16 @@
 <html>
+<h3 class="title" style="margin-bottom:5px;">Search for Farms</h3>
+	<div id="bar">
+	<form method="get" action="index.php?page=farms">
+		<input type="hidden" name="dff_view" value="grid" >
+        <input type="text" name="search" size="30" maxlength="50"><input type="submit" value="Go">
+		<br><br>
+		<input type="submit" value = "Beef"/>
+		<input type="submit" value = "Pork"/>
+		<input type="submit" value = "Chicken"/>
+		<input type="submit" value = "Organic"/>
+	</form>
+	</div>
 <?php
 	$result = query("SELECT * FROM farms");
 ?>
@@ -18,6 +30,10 @@
 
 
 		
+		<?php if(!empty($_POST)) {  
+				$row = query("SELECT * FROM farms WHERE search=".$_GET['search']."");
+			}
+		?>
 		
 		<?php while($row = mysql_fetch_array($result)){?>
 			<tr>
@@ -30,7 +46,7 @@
 				<td> <?php echo $row['address'] ?></td>
 				<td> <?php echo $row['phone'] ?></td>
 				<td> <?php echo $row['email'] ?></td>
-				<td> <?php echo $row['website'] ?></td>
+				<td> <a class = "link" href = "<?php echo $row['website'] ?>"> <?php echo $row['website'] ?> </a> </td>
 				<td> <?php 
 					if ($row['organic']==0){
 						echo 'No';
