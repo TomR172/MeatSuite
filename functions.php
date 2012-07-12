@@ -65,13 +65,6 @@ function insert($table, $values, $echo_query = false)
     return $insert_id;
 }
 
-// function: update
-// parameters:
-// 	$table - string - name of table to perform update on
-//	$values - associative array - db_field => value
-//	$contraints - string - db_field = value
-//
-	// updates $values in $table where $contraints
 /**
  * Update record in $table matching $contraints with $values
  * @param string $table - name of table to perform update on

@@ -12,12 +12,12 @@ if(!empty($_POST)) {
     } else {
         $values['pork'] = 0;
     }
-    if(isset($_POST['Chicken'])) {
+    if(isset($_POST['chicken'])) {
         $values['chicken'] = 1;
     } else {
         $values['chicken'] = 0;
     }
-    if(isset($_POST['Organic'])) {
+    if(isset($_POST['organic'])) {
         $values['organic'] = 1;
     } else {
         $values['organic'] = 0;
