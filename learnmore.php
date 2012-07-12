@@ -82,7 +82,7 @@
         <p><div class="firstWord">Shelled corn</div>Dry whole kernel corn.</p>
 
         <p><div class="firstWord">Cracked corn</div>Dry, whole kernel corn which is ground into smaller pieces.</p>
-        </div>';
+        </div>
     <?php elseif ($tab==4) : ?>
         <h3 class="title">UNDERSTANDING WEIGHTS AND PRODUCTS</h3>
         <h4 class="subtitle">Learn about Local Meats Weights and Pricing</h4>

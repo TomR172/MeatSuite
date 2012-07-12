@@ -9,13 +9,13 @@ function connect_to_db()
     $link = mysql_connect(MYSQL_SERVER, MYSQL_USERNAME, MYSQL_PASSWORD);
 
     if(!$link) {
-        report_sql_errors();
+        echo "Error: " . mysql_error();
         return false;
     }
 
     $db = mysql_select_db(MYSQL_DATABASE, $link);
     if(!$db) {
-        report_sql_errors();
+        echo "Error: " . mysql_error();
         return false;
     }
 
