@@ -1,5 +1,13 @@
 <?php 
-    if(!empty($_POST)) {      
+	$total = count($_POST);
+    if(
+	!empty($_POST["FarmName"])and
+	!empty($_POST["Owner"])and
+	!empty($_POST["Address"])and
+	!empty($_POST["Phone"])and
+	!empty($_POST["Email"])and
+	!empty($_POST["Website"])and
+	!empty($_POST["desc"])) {      
 	$farmName = $_POST["FarmName"];
 	$farmName = mysql_real_escape_string($farmName);
 	$owner = $_POST["Owner"];
@@ -46,6 +54,9 @@
             echo "You could not be signed up";
         }
     }
+else {
+            echo "You have not be signed up yet.";
+        }
     
 ?>
 
