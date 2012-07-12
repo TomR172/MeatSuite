@@ -9,13 +9,13 @@ function connect_to_db()
     $link = mysql_connect(MYSQL_SERVER, MYSQL_USERNAME, MYSQL_PASSWORD);
 
     if(!$link) {
-        report_sql_errors();
+        echo "Error: " . mysql_error();
         return false;
     }
 
     $db = mysql_select_db(MYSQL_DATABASE, $link);
     if(!$db) {
-        report_sql_errors();
+        echo "Error: " . mysql_error();
         return false;
     }
 
@@ -65,13 +65,6 @@ function insert($table, $values, $echo_query = false)
     return $insert_id;
 }
 
-// function: update
-// parameters:
-// 	$table - string - name of table to perform update on
-//	$values - associative array - db_field => value
-//	$contraints - string - db_field = value
-//
-	// updates $values in $table where $contraints
 /**
  * Update record in $table matching $contraints with $values
  * @param string $table - name of table to perform update on
