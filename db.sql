@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 05, 2012 at 03:41 PM
+-- Generation Time: Jul 12, 2012 at 06:00 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -37,16 +37,21 @@ CREATE TABLE IF NOT EXISTS `farms` (
   `beef` tinyint(1) NOT NULL,
   `pork` tinyint(1) NOT NULL,
   `chicken` tinyint(1) NOT NULL,
-  `description` varchar(1000) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `description` varchar(1000) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `farms`
 --
 
-INSERT INTO `farms` (`FarmName`, `owner`, `address`, `phone`, `email`, `website`, `organic`, `beef`, `pork`, `chicken`, `description`) VALUES
-('The Farm', 'John Doe', '123 Main Street', '607-555-1233', 'john.doe@gmail.com', 'www.joesfarm.com', 0, 0, 0, 0, NULL),
-('Butcher Shop', 'Bob', '63 Tower Road', '800-432-5433', 'bob@gmail.com', 'www.joesfarm.com', 0, 0, 0, 0, '(voice-over) With the coming of the Second World War, many eyes in imprisoned Europe turned hopefully or desperately toward the freedom of the Americas. Lisbon became the great embarkation point. But not everybody could get to Lisbon directly...');
+INSERT INTO `farms` (`FarmName`, `owner`, `address`, `phone`, `email`, `website`, `organic`, `beef`, `pork`, `chicken`, `description`, `id`) VALUES
+('The Farm', 'John Doe', '123 Main Street', '607-555-1233', 'john.doe@gmail.com', 'www.joesfarm.com', 0, 0, 0, 0, NULL, 1),
+('Butcher Shop', 'Bob', '63 Tower Road', '800-432-5433', 'bob@gmail.com', 'www.joesfarm.com', 0, 0, 0, 0, '(voice-over) With the coming of the Second World War, many eyes in imprisoned Europe turned hopefully or desperately toward the freedom of the Americas. Lisbon became the great embarkation point. But not everybody could get to Lisbon directly...', 2),
+('', '', '', '', '', '', 1, 1, 1, 1, '		No more than 1000 characters\r\n	', 3),
+('sdf', 'sdf', 'sadf', 'sdf', 'sadf', 'sf', 0, 0, 0, 0, '		No more than 1000 characters\r\n	', 4),
+('dsf', 'sdaf', 'asdf', 'sadfsadf', 'sdaf', 'sadf', 0, 0, 0, 0, '		No more than 1000 characters\r\n	', 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
