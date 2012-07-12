@@ -16,9 +16,7 @@
         if(isset($_GET['Organic'])) {  
             $query .= " AND organic=1";
         }
-        
-        echo '<b>Query:</b> '.$query.'<br/><br/>';
-        
+                
         $result = query($query);
         
 ?>
