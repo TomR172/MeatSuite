@@ -1,82 +1,57 @@
-<?php 
-	$total = count($_POST);
-    if(
-	!empty($_POST["FarmName"])and
-	!empty($_POST["Owner"])and
-	!empty($_POST["Address"])and
-	!empty($_POST["Phone"])and
-	!empty($_POST["Email"])and
-	!empty($_POST["Website"])and
-	!empty($_POST["desc"])) {      
-	$farmName = $_POST["FarmName"];
-	$farmName = mysql_real_escape_string($farmName);
-	$owner = $_POST["Owner"];
-	$owner = mysql_real_escape_string($owner);
-	$address = $_POST["Address"];
-	$address = mysql_real_escape_string($address);
-	$phone = $_POST["Phone"];
-	$phone = mysql_real_escape_string($phone);
-	$email = $_POST["Email"];
-	$email = mysql_real_escape_string($email);
-	$website = $_POST["Website"];
-	$website = mysql_real_escape_string($website);
-	$desc = $_POST["desc"];
-	$desc = mysql_real_escape_string($desc);
-	if(isset($_POST['Beef'])){
-		$beef = 1;
-	}
-	else {
-		$beef=0;
-	}
-	if(isset($_POST['Pork'])){
-		$pork=1;
-	}
-	else {
-		$pork=0;
-	}
-	if(isset($_POST['Chicken'])){
-		$chicken=1;
-	}
-	else {
-		$chicken=0;
-	}	
-	if(isset($_POST['Organic'])){
-		$organic=1;
-	}
-	else {
-		$organic=0;
-	}
-	
-
-	if(query("INSERT INTO farms (FarmName, owner, address, phone, email, website, organic, beef, pork, chicken, description) VALUES ('$farmName', '$owner', '$address', '$phone', '$email', '$website', '$organic', '$beef', '$pork', '$chicken', '$desc' )")) {
-            echo "You've been signed up!";
-        } else {
-            echo "You could not be signed up";
-        }
-    }
-else {
-            echo "You have not be signed up yet.";
-        }
+<?php
+if(!empty($_POST)) {
+    $values = $_POST;
     
+    if(isset($_POST['beef'])) {
+        $values['beef'] = 1;
+    } else {
+        $values['beef'] = 0;
+    }
+    if(isset($_POST['pork'])) {
+        $values['pork'] = 1;
+    } else {
+        $values['pork'] = 0;
+    }
+    if(isset($_POST['Chicken'])) {
+        $values['chicken'] = 1;
+    } else {
+        $values['chicken'] = 0;
+    }
+    if(isset($_POST['Organic'])) {
+        $values['organic'] = 1;
+    } else {
+        $values['organic'] = 0;
+    }
+
+    $insert_id = insert('farms', $values);
+    
+    if(insert('farms', $values)) {
+        echo "You've been signed up!  View Your profile <a href='?page=profile&id=".$insert_id."'>here</a>.";
+    } else {
+        echo "You could not be signed up";
+    }
+} else {
+    echo "You have not be signed up yet.";
+}
 ?>
 
 <h3>Sign up here</h3>
 <form class="Register" action="index.php?page=signup" method ="post">
 	Farm <input type="text" name="FarmName" /><br />
-	Owner <input type="text" name="Owner" /><br />
-	Address <input type="text" name="Address" /><br />
-	Phone <input type="text" name="Phone" /><br />
-	Email <input type="text" name="Email" /><br />
-	Website <input type="text" name="Website" /><br />
+	Owner <input type="text" name="owner" /><br />
+	Address <input type="text" name="address" /><br />
+	Phone <input type="text" name="phone" /><br />
+	Email <input type="text" name="email" /><br />
+	Website <input type="text" name="website" /><br />
 	
 	<h3>Please check the ones you sell</h3>
-	<input type="checkbox" name="Beef" /> Beef<br />
-	<input type="checkbox" name="Pork" /> Pork<br />
-	<input type="checkbox" name="Chicken" /> Chicken<br />
-	<input type="checkbox" name="Organic" /> Organic<br />
+	<input type="checkbox" name="beef" /> Beef<br />
+	<input type="checkbox" name="pork" /> Pork<br />
+	<input type="checkbox" name="chicken" /> Chicken<br />
+	<input type="checkbox" name="organic" /> Organic<br />
 	
 	<h3>Add a description of your farm</h3>
-	<textarea name="desc" cols="40" rows="10">
+	<textarea name="description" cols="40" rows="10">
 		No more than 1000 characters
 	</textarea><br>
 	<input type="submit" value = "Submit"/>

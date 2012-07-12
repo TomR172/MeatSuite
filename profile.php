@@ -1,6 +1,6 @@
 <?php
 	
-	$desc = query("SELECT * FROM farms WHERE id=".$_GET['id']."");
+	$desc = query("SELECT * FROM farms WHERE id=".db_sanitize($_GET['id'])."");
 	$row = mysql_fetch_array($desc);?>
 	
 	<h2 id="ShopName">Owner: <?php echo $row['owner']; ?> </h2>
