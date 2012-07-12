@@ -1,14 +1,14 @@
 <html>
 <h3 class="title" style="margin-bottom:5px;">Search for Farms</h3>
 	<div id="bar">
-	<form method="get" action="index.php?page=farms">
-		<input type="hidden" name="dff_view" value="grid" >
+	<form method="get" action="index.php">
+		<input type = "hidden" name = "page" value = "farms">
         <input type="text" name="search" size="30" maxlength="50"><input type="submit" value="Go">
 		<br><br>
-		<input type="submit" value = "Beef"/>
-		<input type="submit" value = "Pork"/>
-		<input type="submit" value = "Chicken"/>
-		<input type="submit" value = "Organic"/>
+		<input type="submit" value = "Beef" name = "Beef"/>
+		<input type="submit" value = "Pork" name = "Pork"/>
+		<input type="submit" value = "Chicken" name = "Chicken" />
+		<input type="submit" value = "Organic" name = "Organic"/>
 	</form>
 	</div>
 <?php
