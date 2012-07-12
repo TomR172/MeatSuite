@@ -239,3 +239,8 @@ td {
 .link:hover{
 	color:#4646f1;
 }
+
+a.active {
+    font-weight: bold;
+    color: black;
+}

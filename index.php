@@ -2,13 +2,6 @@
 	error_reporting(E_ALL);
         ini_set('display_errors', '1');
         
-        $con = mysql_connect("localhost", "root");
-	if (!$con) {
-		die ('Could not connect: ' . mysql_error());
-	}
-        
-	mysql_select_db("db", $con);
-        
         include('functions.php');
         
         $pages = array(
@@ -53,4 +46,3 @@
         $pageFile = $currentPage.".php";                
         
         include "template.php";
-	?>
