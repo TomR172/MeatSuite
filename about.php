@@ -1,4 +1,7 @@
-<img src="http://www.lisaalber.com/images/Butcher-shop.jpg" class ="ImageMeat" />
+<img src="http://www.lisaalber.com/images/Butcher-shop.jpg" style ="float:right; margin: 5px 5px 5px 5px;" />
+
+<p>In the Ithaca region, local foods enjoy strong demand, however, the buy local movement has been largely concentrated on fresh seasonal produce.  While picking a good local tomato at the farmers' market is easy, buying local meats may be daunting for aspiring locavores.  In addition, many consumers have opted for vegetarianism in reaction to learning about large scale livestock farming, however, locally raised meats, in general, offer an alternative that wary and well-informed consumers accept.</p>
+
 <p>In the Ithaca region, local foods enjoy strong demand, however, the buy local movement has been largely concentrated on fresh seasonal produce.  While picking a good local tomato at the farmers' market is easy, buying local meats may be daunting for aspiring locavores.  In addition, many consumers have opted for vegetarianism in reaction to learning about large scale livestock farming, however, locally raised meats, in general, offer an alternative that wary and well-informed consumers accept.</p>
 
 <p>Meats can be complicated and confusing for consumers and commodity meats are associated with a number of concerns including sources of animal feed, antibiotic and hormone usage, humane treatment, food safety, and health benefits /detriments.  Consumers feel intimidated and distrustful of the range of claims like "natural" and "grass-fed" and consumers are less familiar with livestock farming and choosing meats than they are about vegetables.</p>

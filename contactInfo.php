@@ -1,12 +1,12 @@
 <div>
-	<table border="1">
-		<tr>
+	<table border="1" class="table table-condensed table-striped">
+		<thead style="background-color:#8e4e24; color:#ddd">
 			<th>Name or Company</th>
 			<th>Address</th>
 			<th>City/State/Zipcode</th>
 			<th>Phone Number</th>
 			<th>Email</th>
-		</tr>
+		</thead>
 		<tr>
 			<td>Matthew LeRoux, Agricultural Marketing Specialist</td>
 			<td>None</td>
