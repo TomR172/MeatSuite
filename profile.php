@@ -1,37 +1,55 @@
-<?php
-	
-	$desc = query("SELECT * FROM farms WHERE id=".db_sanitize($_GET['id'])."");
-	$row = mysql_fetch_array($desc);?>
-	
-	<h2 id="ShopName">Owner: <?php echo $row['owner']; ?> </h2>
-	<!--<h2 id="ShopName" class ="under"><?php echo $row['owner']; ?> </h2>-->
-<div id="profileTable">
-	<table border="1">
-		<tr>
-			<th>Address</th>
-			<td><?php echo $row['address']; ?></td>
-		</tr>
-		<tr>
-			<th>Phone Number</th>
-			<td><?php echo $row['phone']; ?></td>
-		</tr>
-		<tr>
-			<th>Email</th>
-			<td><?php echo $row['email']; ?></td>
-		</tr>
-		<tr>
-			<th>Website</th>
-			<td><?php echo $row['website']; ?></td>
-		</tr>
-	</table>
+<div class="container-fluid">
+    <?php
+        $desc = query("SELECT * FROM farms WHERE id=".db_sanitize($_GET['id'])."");
+        $row = mysql_fetch_array($desc);
+    ?>
+    <h3><?php echo $row['address']; ?> </h3>
+    <h3><?php echo $row['csz']; ?> </h3>
+    <h3><?php echo $row['phone']; ?></h3>
+    <h3><?php echo $row['email']; ?></h3>
+    <h3><?php echo $row['website']; ?></h3>
+    <br>
+    <div class="row-fluid">
+        <div class="span4">
+            <p style="border:1px solid black; padding: 5px 5px 5px 5px;">
+                <?php 
+                    if (isset ($row['description'])){
+                        echo $row['description'];
+                    }
+                    else{
+                        echo 'No description available.';
+                    }
+                ?> 
+            </p>
+            
+            <h4>Organic:  
+             <?php if($row['organic']==1)
+                        echo 'yes';
+                   else
+                     echo 'no';
+             ?>
+            </h4>
+            <h4>Beef:  
+             <?php if($row['beef']==1)
+                        echo 'yes';
+                   else
+                     echo 'no';
+             ?>
+            </h4>
+             <h4>Pork:  
+             <?php if($row['pork']==1)
+                        echo 'yes';
+                   else
+                     echo 'no';
+             ?>
+            </h4>            
+            <h4>Chicken:  
+             <?php if($row['chicken']==1)
+                        echo 'yes';
+                   else
+                     echo 'no';
+             ?>
+            </h4>
+        </div>
+    </div>
 </div>
-<p>
-	<?php 
-		if (isset ($row['description'])){
-			echo $row['description'];
-		}
-		else{
-			echo 'No description available.';
-		}
-	?> 
-</p>
