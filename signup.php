@@ -1,4 +1,56 @@
 <?php
+
+$farmInfoOne = array(
+    "FarmName" => array(
+        "name" => "FarmName",
+        "title" => "Farm"
+    ),
+    "owner" => array(
+        "name" => "owner",
+        "title" => "Owner"
+    ),
+    "Address" => array(
+        "name" => "Address",
+        "title" => "Address"
+    ),
+    "csz" => array(
+        "name" => "csz",
+        "title" => "City/State/Zipcode"
+    ),         
+    "phone" => array(
+        "name" => "phone",
+        "title" => "Phone"
+    ), 
+    "email" => array(
+        "name" => "email",
+        "title" => "Email"
+    ),
+    "website" => array(
+        "name" => "website",
+        "title" => "Website"
+    )
+);          
+
+$farmInfoTwo = array(
+    "chicken" => array(
+        "name" => "chicken",
+        "title" => "Chicken"
+    ),
+    "beef" => array(
+        "name" => "beef",
+        "title" => "Beef"
+    ),
+    "pork" => array(
+        "name" => "pork",
+        "title" => "Pork"
+    ),
+    "organic" => array(
+        "name" => "organic",
+        "title" => "Organic"
+    )
+);
+
+
 if(!empty($_POST)) {
     $values = $_POST;
     $form_has_error = false;
@@ -25,28 +77,6 @@ if(!empty($_POST)) {
         $values['organic'] = 0;
     }
     
-
-    
-    $farmInfoTwo = array(
-        "chicken" => array(
-            "name" => "chicken",
-            "title" => "Chicken"
-        ),
-        "beef" => array(
-            "name" => "beef",
-            "title" => "Beef"
-        ),
-        "pork" => array(
-            "name" => "pork",
-            "title" => "Pork"
-        ),
-        "organic" => array(
-            "name" => "organic",
-            "title" => "Organic"
-        )
-    );
-
-               
     foreach($values as $key => $value) {
         if(trim($value) == "") {
             $form_has_error = true;
@@ -59,7 +89,6 @@ if(!empty($_POST)) {
     }
         
     if(isset($insert_id) && $insert_id) {
-        //echo 'You have been signed up';
         header('Location: index.php?page=profile&id=' . $insert_id);
     } else {
         $error_message = "You could not be signed up";
@@ -83,73 +112,26 @@ if(!empty($_POST)) {
             <div class="span4 offset2">
                 <fieldset>
                     <legend>Sign up here</legend>
-                        <?php
-                        $farmInfoOne = array(
-                            "FarmName" => array(
-                                "name" => "FarmName",
-                                "title" => "Farm"
-                            ),
-                            "owner" => array(
-                                "name" => "owner",
-                                "title" => "Owner"
-                            ),
-                            "Address" => array(
-                                "name" => "Address",
-                                "title" => "Address"
-                            ),
-                            "csz" => array(
-                                "name" => "csz",
-                                "title" => "City/State/Zipcode"
-                            ),         
-                            "phone" => array(
-                                "name" => "phone",
-                                "title" => "Phone"
-                            ), 
-                            "email" => array(
-                                "name" => "email",
-                                "title" => "Email"
-                            ),
-                            "website" => array(
-                                "name" => "website",
-                                "title" => "Website"
-                            )
-                        );          
-                        foreach ($farmInfoOne as $key => $nameTitle) { ?>
-                            <div class="control-group">
+                        <?php foreach ($farmInfoOne as $key => $nameTitle) : ?>
+                            <div class="control-group <?php echo isset($errors[$nameTitle['name']]) ? 'error' : '' ?>">
                                 <label class="control-label" for= <?php echo $nameTitle['name'] ?> >
                                     <?php echo $nameTitle['title'] ?> 
                                 </label>
                                 <div class="controls">
-                                    <input id=<?php echo $nameTitle['name'] ?> type="text" name=<?php echo $nameTitle['name'] ?> >
+                                    <input id="<?php echo $nameTitle['name'] ?>" type="text" name=<?php echo $nameTitle['name'] ?> >
+                                    <?php if(isset($errors[$nameTitle['name']])) : ?>
+                                        <span class="help-inline"><?php echo $errors[$nameTitle['name']]; ?></span>                            
+                                    <?php endif; ?>                                    
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php endforeach; ?>
                 </fieldset>
             </div>
             <div class="span4">
                 <fieldset>
                     <legend>Please check all that apply</legend>
                     
-                    <?php 
-                    $farmInfoTwo = array(
-                        "chicken" => array(
-                            "name" => "chicken",
-                            "title" => "Chicken"
-                        ),
-                        "beef" => array(
-                            "name" => "beef",
-                            "title" => "Beef"
-                        ),
-                        "pork" => array(
-                            "name" => "pork",
-                            "title" => "Pork"
-                        ),
-                        "organic" => array(
-                            "name" => "organic",
-                            "title" => "Organic"
-                        )
-                    );
-                    foreach ($farmInfoTwo as $key => $nameTitle) { ?>
+                    <?php foreach ($farmInfoTwo as $key => $nameTitle) : ?>
                         <div class="control-group">
                             <div class="controls">
                                 <label class="checkbox">
@@ -158,15 +140,19 @@ if(!empty($_POST)) {
                                 </label>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endforeach; ?>
                 </fieldset>
 
                 <fieldset>
                     <legend>Add a description of your farm</legend>
-                    <div class="control-group">
+                    <div class="control-group <?php echo isset($errors['description']) ? 'error' : '' ?>">
                         <div class="controls">                    
                             <textarea style="width:265px;"name="description" cols="350" rows="8"></textarea>
                             <p class="help-block">1000 characters max</p>
+                            <?php if(isset($errors['description'])) : ?>
+                                <span class="help-inline"><?php echo $errors['description']; ?></span>                            
+                            <?php endif; ?>                                    
+                            
                         </div>
                     </div>
                 </fieldset>
