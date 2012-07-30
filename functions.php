@@ -108,3 +108,17 @@ function db_sanitize($value) {
         $link = connect_to_db();
         return mysql_real_escape_string($value, $link);
 }
+
+function sanitize($value) {
+        if(is_array($value)) {
+                $value_array = array();
+                foreach($value as $k => $v) {
+                        $value_array[$k] = sanitize($v);
+                }
+                return $value_array;
+        } else {
+                if(get_magic_quotes_gpc()) $value = stripslashes($value);
+                $value = htmlspecialchars($value);
+                return $value;
+        }
+}
