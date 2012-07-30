@@ -4,7 +4,7 @@
         
         geocoder = new google.maps.Geocoder();
 
-        var loc = geocoder.geocode("1600 Amphitheatre Parkway, Mountain View, CA");
+        //var loc = geocoder.geocode("1600 Amphitheatre Parkway, Mountain View, CA");
 
         var mapOptions = {
             center: new google.maps.LatLng(42.4406, -76.4969),
@@ -24,4 +24,4 @@
     }
 </script>
 
-<div id="map_canvas" style="width:100%; height:100%"></div>
+<div id="map_canvas" style="width:75%; height:75%"></div>

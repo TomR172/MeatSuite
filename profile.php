@@ -3,6 +3,33 @@
         $desc = query("SELECT * FROM farms WHERE id=".db_sanitize($_GET['id'])."");
         $row = mysql_fetch_array($desc);
     ?>
+    
+    <script type="text/javascript">
+        function initialize() {
+
+            geocoder = new google.maps.Geocoder();
+
+            //var loc = geocoder.geocode("1600 Amphitheatre Parkway, Mountain View, CA");
+
+            var mapOptions = {
+                center: new google.maps.LatLng(42.4406, -76.4969),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.HYBRID 
+            };
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: loc,
+                map: map,
+                title: 'Ithaca'
+            });
+
+        }
+    </script>
+    
+    
     <h3><?php echo $row['address']; ?> </h3>
     <h3><?php echo $row['csz']; ?> </h3>
     <h3><?php echo $row['phone']; ?></h3>
@@ -50,9 +77,10 @@
                      echo 'no';
              ?>
             </h4>
-        </div>
-        <div class="span4">
-            
+        </div>       
+        <div class="span8">
+            <img src="http://www.lisaalber.com/images/Butcher-shop.jpg" style =" margin: 5px 5px 5px 5px;" />
+            <div id="map_canvas" style="width:75%; height:60%"></div>
         </div>
     </div>
 </div>
