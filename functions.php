@@ -55,7 +55,6 @@ function query($query, $insert_id = false)
 function insert($table, $values, $echo_query = false)
 {
     $set_expression = sql_set_expression($values);
-    echo $set_expression;
     $query = 'INSERT INTO ' . $table . ' SET ' . $set_expression;
 
     if($echo_query) echo $query.'<br/>';
