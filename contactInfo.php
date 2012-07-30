@@ -1,6 +1,6 @@
 <div>
 	<table border="1" class="table table-condensed table-striped">
-		<thead style="background-color:#8e4e24; color:#ddd">
+		<thead class="brownTable">
 			<th>Name or Company</th>
 			<th>Address</th>
 			<th>City/State/Zipcode</th>

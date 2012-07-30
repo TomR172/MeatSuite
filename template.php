@@ -1,21 +1,31 @@
 <html>
     <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <title>MeatSuite</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="meatsuite2.css" />
         <style>
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map_canvas { height: 100% }
             body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
             }
         </style>
+
+        <script type="text/javascript"
+                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBq74_RDXdxbqgWKsFYzRPLHiCnmAysiNo&sensor=true">
+        </script>
+
     </head>
 
-    <body>
+    <body onload="initialize()">
         <?php include 'Menu.php'; ?>
 
 
         <div class="container">
             <div class="page-header">
-                <h2>
+                <h2 class="pageName">
                     <?php
                     if ($pageHeader == 'Profile') {
                         $desc = query("SELECT * FROM farms WHERE id='" . db_sanitize($_GET['id']) . "'");

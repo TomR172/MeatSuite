@@ -15,26 +15,29 @@
             "contactInfo" => array(
                 "header" => "Contact Information"
             ),
-			"farms" => array(
-				"header" => "Farms"
-			), 
-			"signup" => array (
-				"header" => "Sign Up"
-			),
-			
-			"profile" => array (
-				"header" => "Profile",
+            "farms" => array(
+                "header" => "Farms"
+            ), 
+            "signup" => array (
+                "header" => "Sign Up"
+            ),
+
+            "profile" => array (
+                "header" => "Profile",
                 "showInMenu" => false
-			),
-			
-			"learnmore" => array (
-				"header" => "Learn More"
-			),
-			
-			"description" => array (
-				"header" => "Sign Up",
+            ),
+
+            "learnmore" => array (
+                "header" => "Learn More"
+            ),
+
+            "description" => array (
+                "header" => "Sign Up",
                 "showInMenu" => false
-			)
+            ), 
+            "map" => array (
+                "header" => "Map"
+            )
         );
 		
         if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {

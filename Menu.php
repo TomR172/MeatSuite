@@ -9,15 +9,15 @@
           <a class="brand" href="index.php?">Meat Suite</a>
           <div class="nav-collapse">
             <ul class="nav">
-				<?php foreach($pages as $page => $values) : ?>
-					<?php if(!isset($values['showInMenu']) || $values['showInMenu']) : ?>
-					<li class= "<?php if($page == $currentPage) echo 'active'; ?>">
-						<a 
-						href="index.php?page=<?php echo $page; if ($page == 'learnmore'){ echo '&tab=0';} ?>"><?php echo $values["header"]; ?>
-						</a>
-					</li>
-					<?php endif; ?>
-				<?php endforeach; ?>
+                <?php foreach($pages as $page => $values) : ?>
+                    <?php if(!isset($values['showInMenu']) || $values['showInMenu']) : ?>
+                        <li class= "<?php if($page == $currentPage) echo 'active'; ?>">
+                            <a 
+                            href="index.php?page=<?php echo $page; if ($page == 'learnmore'){ echo '&tab=0';} ?>"><?php echo $values["header"]; ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

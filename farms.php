@@ -1,8 +1,8 @@
 <?php
 	$query = "SELECT * FROM farms WHERE 1";
         
-        if(isset($_GET['search']) && trim($_GET['search']) != "") {  
-            $query .= " AND farmName LIKE '%".$_GET['search']."%'";
+        if(isset(htmlspecialchars($_GET['search'])) && trim(htmlspecialchars($_GET['search'])) != "") {  
+            $query .= " AND farmName LIKE '%".htmlspecialchars($_GET['search'])."%'";
         }
         if(isset($_GET['Beef'])) {  
             $query .= " AND beef=1";
@@ -29,17 +29,17 @@
                 <input class="btn btn-inverse" type="submit" value="Go">
                 <br><br>
                 <div style="text-align:center;">
-                    <a class="<?php echo count($_GET) == 1 ? 'btn btn-success' : 'btn btn-danger' ?>" href="index.php?page=farms">All</a>
-                    <a class="<?php echo isset($_GET['Beef']) ? 'btn btn-success' : 'btn btn-danger'?>" href="index.php?page=farms&Beef=1">Beef</a>
-                    <a class="<?php echo isset($_GET['Chicken']) ? 'btn btn-success' : 'btn btn-danger'?>" href="index.php?page=farms&Chicken=1">Chicken</a>
-                    <a class="<?php echo isset($_GET['Pork']) ? 'btn btn-success' : 'btn btn-danger'?>" href="index.php?page=farms&Pork=1">Pork</a>
-                    <a class="<?php echo isset($_GET['Organic']) ? 'btn btn-success' : 'btn btn-danger'?>" href="index.php?page=farms&Organic=1">Organic</a>
+                    <a class="<?php echo count($_GET) == 1 ? 'btn btn-danger' : 'btn btn-inverse' ?>" href="index.php?page=farms">All</a>
+                    <a class="<?php echo isset($_GET['Beef']) ? 'btn btn-danger' : 'btn btn-inverse'?>" href="index.php?page=farms&Beef=1">Beef</a>
+                    <a class="<?php echo isset($_GET['Chicken']) ? 'btn btn-danger' : 'btn btn-inverse'?>" href="index.php?page=farms&Chicken=1">Chicken</a>
+                    <a class="<?php echo isset($_GET['Pork']) ? 'btn btn-danger' : 'btn btn-inverse'?>" href="index.php?page=farms&Pork=1">Pork</a>
+                    <a class="<?php echo isset($_GET['Organic']) ? 'btn btn-danger' : 'btn btn-inverse'?>" href="index.php?page=farms&Organic=1">Organic</a>
                 </div>
             </form>
             <?php if(isset($_GET['search'])) : ?>
                 Showing <?php echo mysql_num_rows($result) ?> results for search term "
                             <i>
-                    `           <?php echo $_GET['search'] ?>
+                    `           <?php echo htmlspecialchars($_GET['search']) ?>
                             </i>". 
                             <a href="index.php?page=farms">Clear search</a><br/>
             <?php elseif(isset($_GET['Beef'])) : ?>
@@ -55,12 +55,11 @@
                 Showing <?php echo mysql_num_rows($result) ?> results for search organic.
                             <a href="index.php?page=farms">Clear search</a><br/>
             <?php endif ?>
-                            
-                
+                           
         </div>
         <div>
             <table border='1' class="table table-condensed table-striped">
-                <thead style="background-color:#8e4e24; color:#ddd">
+                <thead class="brownTable">
                     <th>Farm</th>
                     <th>Owner</th>
                     <th>Address</th>
@@ -81,7 +80,7 @@
                             </a>
                         </td>
                             <td> <?php echo $row['owner'] ?></td>
-                            <td> <?php echo $row['address'] ?></td>
+                            <td> <?php echo $row['address']." ".$row['csz'] ?></td>
                             <td> <?php echo $row['phone'] ?></td>
                             <td> <?php echo $row['email'] ?></td>
                             <td> <a class = "link" href = "<?php echo $row['website'] ?>"> <?php echo $row['website'] ?> </a> </td>

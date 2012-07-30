@@ -1,7 +1,7 @@
 <?php
 if(!empty($_POST)) {
     $values = $_POST;
-    $error = false;
+    $form_has_error = false;
     $errors = array();
 
     if(isset($_POST['beef'])) {
@@ -24,15 +24,37 @@ if(!empty($_POST)) {
     } else {
         $values['organic'] = 0;
     }
+    
 
+    
+    $farmInfoTwo = array(
+        "chicken" => array(
+            "name" => "chicken",
+            "title" => "Chicken"
+        ),
+        "beef" => array(
+            "name" => "beef",
+            "title" => "Beef"
+        ),
+        "pork" => array(
+            "name" => "pork",
+            "title" => "Pork"
+        ),
+        "organic" => array(
+            "name" => "organic",
+            "title" => "Organic"
+        )
+    );
+
+               
     foreach($values as $key => $value) {
         if(trim($value) == "") {
-            $error = true;
+            $form_has_error = true;
             $errors[$key] = "Please enter the ".$key;
         }
     }
     
-    if(!$error) {    
+    if(!$form_has_error) {    
         $insert_id = insert('farms', $values);
     }
         
@@ -61,79 +83,82 @@ if(!empty($_POST)) {
             <div class="span4 offset2">
                 <fieldset>
                     <legend>Sign up here</legend>
-                    <div class="control-group <?php echo isset($errors['FarmName']) ? 'error' : '' ?>">
-                        <label class="control-label" for="FarmName">Farm</label>
-                        <div class="controls">
-                            <input id="FarmName" type="text" name="FarmName" />
-                            <?php if(isset($errors['FarmName'])) : ?>
-                                <span class="help-inline"><?php echo $errors['FarmName']; ?></span>                            
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <div class="control-group <?php echo isset($errors['owner']) ? 'error' : '' ?>">
-                        <label class="control-label" for="owner">Owner</label>
-                        <div class="controls">
-                            <input id="owner" type="text" name="owner" />
-                            <?php if(isset($errors['owner'])) : ?>
-                                <span class="help-inline"><?php echo $errors['owner']; ?></span>                            
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="Address">Address</label>
-                        <div class="controls">
-                            <input id="Address" type="text" name="Address" />
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="csz">City/State/Zipcode</label>
-                        <div class="controls">
-                            <input id="csz" type="text" name="csz" />
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="phone">Phone</label>
-                        <div class="controls">
-                            <input id="Phone" type="text" name="phone" />
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="email">Email</label>
-                        <div class="controls">
-                            <input id="email" type="text" name="email" />
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="website">Website</label>
-                        <div class="controls">
-                            <input id="website" type="text" name="website" />
-                        </div>
-                    </div>
+                        <?php
+                        $farmInfoOne = array(
+                            "FarmName" => array(
+                                "name" => "FarmName",
+                                "title" => "Farm"
+                            ),
+                            "owner" => array(
+                                "name" => "owner",
+                                "title" => "Owner"
+                            ),
+                            "Address" => array(
+                                "name" => "Address",
+                                "title" => "Address"
+                            ),
+                            "csz" => array(
+                                "name" => "csz",
+                                "title" => "City/State/Zipcode"
+                            ),         
+                            "phone" => array(
+                                "name" => "phone",
+                                "title" => "Phone"
+                            ), 
+                            "email" => array(
+                                "name" => "email",
+                                "title" => "Email"
+                            ),
+                            "website" => array(
+                                "name" => "website",
+                                "title" => "Website"
+                            )
+                        );          
+                        foreach ($farmInfoOne as $key => $nameTitle) { ?>
+                            <div class="control-group">
+                                <label class="control-label" for= <?php echo $nameTitle['name'] ?> >
+                                    <?php echo $nameTitle['title'] ?> 
+                                </label>
+                                <div class="controls">
+                                    <input id=<?php echo $nameTitle['name'] ?> type="text" name=<?php echo $nameTitle['name'] ?> >
+                                </div>
+                            </div>
+                        <?php } ?>
                 </fieldset>
             </div>
             <div class="span4">
                 <fieldset>
                     <legend>Please check all that apply</legend>
-                    <div class="control-group">
-                        <div class="controls">
-                            <label class="checkbox">
-                                <input type="checkbox" name="beef">
-                                Beef
-                            </label>
-                            <label class="checkbox">
-                                <input type="checkbox" name="pork">
-                                Pork
-                            </label>
-                            <label class="checkbox">
-                                <input type="checkbox" name="chicken">
-                                Chicken
-                            </label>
-                            <label class="checkbox">
-                                <input type="checkbox" name="organic">
-                                Organic
-                            </label>
+                    
+                    <?php 
+                    $farmInfoTwo = array(
+                        "chicken" => array(
+                            "name" => "chicken",
+                            "title" => "Chicken"
+                        ),
+                        "beef" => array(
+                            "name" => "beef",
+                            "title" => "Beef"
+                        ),
+                        "pork" => array(
+                            "name" => "pork",
+                            "title" => "Pork"
+                        ),
+                        "organic" => array(
+                            "name" => "organic",
+                            "title" => "Organic"
+                        )
+                    );
+                    foreach ($farmInfoTwo as $key => $nameTitle) { ?>
+                        <div class="control-group">
+                            <div class="controls">
+                                <label class="checkbox">
+                                    <input type="checkbox" name=<?php echo $nameTitle['name'] ?> >
+                                    <?php echo $nameTitle['title'] ?>
+                                </label>
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </fieldset>
 
                 <fieldset>
