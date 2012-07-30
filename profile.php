@@ -30,14 +30,16 @@
     </script>
     
     
-    <h3><?php echo $row['address']; ?> </h3>
-    <h3><?php echo $row['csz']; ?> </h3>
-    <h3><?php echo $row['phone']; ?></h3>
-    <h3><?php echo $row['email']; ?></h3>
-    <h3><?php echo $row['website']; ?></h3>
-    <br>
+
     <div class="row-fluid">
         <div class="span4">
+            <h3><?php echo $row['address']; ?> </h3>
+            <h3><?php echo $row['csz']; ?> </h3>
+            <h3><?php echo $row['phone']; ?></h3>
+            <h3><?php echo $row['email']; ?></h3>
+            <h3><?php echo $row['website']; ?></h3>
+            <br>
+            
             <p style="border:1px solid black; padding: 5px 5px 5px 5px;">
                 <?php 
                     if (isset ($row['description'])){

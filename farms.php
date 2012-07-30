@@ -2,7 +2,7 @@
 	$query = "SELECT * FROM farms WHERE 1";
         
         if(isset($_GET['search']) && trim($_GET['search']) != "") {  
-            $query .= " AND farmName LIKE '%".htmlspecialchars($_GET['search'])."%'";
+            $query .= " AND farmName LIKE '%".$_GET['search']."%'";
         }
         if(isset($_GET['Beef'])) {  
             $query .= " AND beef=1";
