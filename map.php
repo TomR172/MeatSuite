@@ -1,11 +1,6 @@
 
 <script type="text/javascript">
     function initialize() {
-        
-        geocoder = new google.maps.Geocoder();
-
-        //var loc = geocoder.geocode("1600 Amphitheatre Parkway, Mountain View, CA");
-
         var mapOptions = {
             center: new google.maps.LatLng(42.4406, -76.4969),
             zoom: 14,
@@ -16,12 +11,25 @@
             mapOptions);
                 
         var marker = new google.maps.Marker({
-            position: loc,
             map: map,
             title: 'Ithaca'
         });
             
+        geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode( {'address': '615 Willow Ave Ithaca NY 14850' },
+            function(data, status) {
+                mapLocation = data[0].geometry.location;
+                var marker = new google.maps.Marker({
+                    position: mapLocation, 
+                    map: map
+                });
+                
+                map.setCenter(marker.getPosition());
+
+            });
+            
     }
 </script>
 
-<div id="map_canvas" style="width:75%; height:75%"></div>
+<div id="map_canvas" style="width:100%; height:75%"></div>
