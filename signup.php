@@ -1,5 +1,4 @@
 <?php
-
 $farmInfoOne = array(
     "FarmName" => array(
         "name" => "FarmName",
@@ -16,20 +15,22 @@ $farmInfoOne = array(
     "csz" => array(
         "name" => "csz",
         "title" => "City/State/Zipcode"
-    ),         
+    ),
     "phone" => array(
         "name" => "phone",
         "title" => "Phone"
-    ), 
+    ),
     "email" => array(
         "name" => "email",
         "title" => "Email"
     ),
+    /*1 corresponds to the attribute being optional*/
     "website" => array(
         "name" => "website",
-        "title" => "Website"
+        "title" => "Website",
+        "optional" => 1
     )
-);          
+);
 
 $farmInfoTwo = array(
     "chicken" => array(
@@ -51,44 +52,46 @@ $farmInfoTwo = array(
 );
 
 
-if(!empty($_POST)) {
+if (!empty($_POST)) {
     $values = $_POST;
     $form_has_error = false;
     $errors = array();
 
-    if(isset($_POST['beef'])) {
+    if (isset($_POST['beef'])) {
         $values['beef'] = 1;
     } else {
         $values['beef'] = 0;
     }
-    if(isset($_POST['pork'])) {
+    if (isset($_POST['pork'])) {
         $values['pork'] = 1;
     } else {
         $values['pork'] = 0;
     }
-    if(isset($_POST['chicken'])) {
+    if (isset($_POST['chicken'])) {
         $values['chicken'] = 1;
     } else {
         $values['chicken'] = 0;
     }
-    if(isset($_POST['organic'])) {
-        $values['organic'] = 1;
+    if (isset($_POST['organic'])) {
+        $values['organic'];
     } else {
         $values['organic'] = 0;
     }
-    
-    foreach($values as $key => $value) {
-        if(trim($value) == "") {
-            $form_has_error = true;
-            $errors[$key] = "Please enter the ".$key;
+
+    foreach ($values as $key => $value) {
+        if (trim($value) == "") {
+            if ((!isset($farmInfoOne[$key])) || !isset($farmInfoOne[$key]['optional'])) {
+                $form_has_error = true;
+                $errors[$key] = "Please enter the " . $key;
+            }
         }
     }
-    
-    if(!$form_has_error) {    
+
+    if (!$form_has_error) {
         $insert_id = insert('farms', $values);
     }
-        
-    if(isset($insert_id) && $insert_id) {
+
+    if (isset($insert_id) && $insert_id) {
         header('Location: index.php?page=profile&id=' . $insert_id);
     } else {
         $error_message = "You could not be signed up";
@@ -99,7 +102,7 @@ if(!empty($_POST)) {
 <form class="form-vertical" action="index.php?page=signup" method ="post"
       style="padding-top:10px;">
     <div class="container-fluid">
-        <?php if(isset($error_message)) : ?>
+        <?php if (isset($error_message)) : ?>
             <div class="row">
                 <div class="span12">
                     <div class="alert alert-error">
@@ -112,25 +115,41 @@ if(!empty($_POST)) {
             <div class="span4 offset2">
                 <fieldset>
                     <legend>Sign up here</legend>
-                        <?php foreach ($farmInfoOne as $key => $nameTitle) : ?>
-                            <div class="control-group <?php echo isset($errors[$nameTitle['name']]) ? 'error' : '' ?>">
-                                <label class="control-label" for= <?php echo $nameTitle['name'] ?> >
-                                    <?php echo $nameTitle['title'] ?> 
-                                </label>
-                                <div class="controls">
-                                    <input id="<?php echo $nameTitle['name'] ?>" type="text" name=<?php echo $nameTitle['name'] ?> >
-                                    <?php if(isset($errors[$nameTitle['name']])) : ?>
-                                        <span class="help-inline"><?php echo $errors[$nameTitle['name']]; ?></span>                            
-                                    <?php endif; ?>                                    
-                                </div>
+                    <?php foreach ($farmInfoOne as $key => $nameTitle) : ?>
+                        <div class="control-group 
+
+
+                             <?php
+                             if (isset($nameTitle['optional']) and $nameTitle['optional'] == 1) {
+                                 echo 'warning';
+                             } else if (isset($errors[$nameTitle['name']])) {
+                                 echo 'error';
+                             }
+                             ?> ">
+
+                            <label class="control-label" for= <?php echo $nameTitle['name'] ?> >
+                                <?php echo $nameTitle['title'] ?> 
+                            </label>
+                            <div class="controls">
+                                <input id="<?php echo $nameTitle['name'] ?>" type="text" name="<?php echo $nameTitle['name'] ?>"  
+                                       value=" <?php
+                            if (!empty($values[$nameTitle['name']])) {
+                                echo $values[$nameTitle['name']];
+                            }
+                                ?>"
+                                       >
+                                       <?php if (isset($errors[$nameTitle['name']])) : ?>
+                                    <span class="help-inline"><?php echo $errors[$nameTitle['name']]; ?></span>                            
+                                <?php endif; ?>                                    
                             </div>
-                        <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </fieldset>
             </div>
             <div class="span4">
                 <fieldset>
                     <legend>Please check all that apply</legend>
-                    
+
                     <?php foreach ($farmInfoTwo as $key => $nameTitle) : ?>
                         <div class="control-group">
                             <div class="controls">
@@ -149,10 +168,10 @@ if(!empty($_POST)) {
                         <div class="controls">                    
                             <textarea style="width:265px;"name="description" cols="350" rows="8"></textarea>
                             <p class="help-block">1000 characters max</p>
-                            <?php if(isset($errors['description'])) : ?>
+                            <?php if (isset($errors['description'])) : ?>
                                 <span class="help-inline"><?php echo $errors['description']; ?></span>                            
                             <?php endif; ?>                                    
-                            
+
                         </div>
                     </div>
                 </fieldset>

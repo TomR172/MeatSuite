@@ -4,3 +4,5 @@ define('MYSQL_DATABASE', 'db');
 define('MYSQL_SERVER', 'localhost');
 define('MYSQL_USERNAME', 'root');
 define('MYSQL_PASSWORD', 'root');
+define("USER", "");
+define("PASS", "");

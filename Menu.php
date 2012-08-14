@@ -18,6 +18,12 @@
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
+                    <?php if (loggedin()) { ?>
+                        <li>
+                           Logged in as <?php echo $_SESSION['user'] ?>, <a href ="index.php?page=admin&logout=1" >logout </a> 
+                        </li>
+                        <?php }  ?>
+                        
             </ul>
           </div><!--/.nav-collapse -->
         </div>

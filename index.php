@@ -1,52 +1,72 @@
-<?php 
-	error_reporting(E_ALL);
-        ini_set('display_errors', '1');
-        
-        include('config.php');
-        include('functions.php');
-        
-        $pages = array(
-            "home" => array(
-                "header" => "Home"                
-            ),
-            "about" => array(
-                "header" => "About"
-            ),
-            "contactInfo" => array(
-                "header" => "Contact Information"
-            ),
-            "farms" => array(
-                "header" => "Farms"
-            ), 
-            "signup" => array (
-                "header" => "Sign Up"
-            ),
+<?php
 
-            "profile" => array (
-                "header" => "Profile",
-                "showInMenu" => false
-            ),
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-            "learnmore" => array (
-                "header" => "Learn More"
-            ),
+include('config.php');
+include('functions.php');
 
-            "description" => array (
-                "header" => "Sign Up",
-                "showInMenu" => false
-            ), 
-            "map" => array (
-                "header" => "Map"
-            )
-        );
-		
-        if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
-            $currentPage = $_GET["page"];                
-        } else {
-            $currentPage = "home";
+
+if (!empty($_POST)) {
+    if (isset($_POST['user']) && $_POST['user'] == USER) {
+        if (isset($_POST['password']) && $_POST['password'] == PASS) {
+            $_SESSION['user'] = USER;
         }
-		
-        $pageHeader = $pages[$currentPage]["header"];
-        $pageFile = $currentPage.".php";                
-        
-        include "template.php";
+    }
+}
+
+if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+    $_SESSION['user'] = null;
+}
+
+
+$pages = array(
+    "home" => array(
+        "header" => "Home"
+    ),
+    "about" => array(
+        "header" => "About"
+    ),
+    "contactInfo" => array(
+        "header" => "Contact Information"
+    ),
+    "farms" => array(
+        "header" => "Farms"
+    ),
+    "signup" => array(
+        "header" => "Sign Up"
+    ),
+    "profile" => array(
+        "header" => "Profile",
+        "showInMenu" => false
+    ),
+    "learnmore" => array(
+        "header" => "Learn More"
+    ),
+    "description" => array(
+        "header" => "Sign Up",
+        "showInMenu" => false
+    ),
+    "map" => array(
+        "header" => "Map"
+    ),
+    "admin" => array(
+        "header" => "Admin"
+    ),
+    "edit" => array(
+        "header" => "Edit",
+        "showInMenu" => false
+    )
+);
+
+if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+    $currentPage = $_GET["page"];
+} else {
+    $currentPage = "home";
+}
+
+$pageHeader = $pages[$currentPage]["header"];
+$pageFile = $currentPage . ".php";
+
+include "template.php";

@@ -122,3 +122,7 @@ function sanitize($value) {
                 return $value;
         }
 }
+
+function loggedin() {
+    return isset($_SESSION['user']);
+}

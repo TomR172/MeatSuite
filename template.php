@@ -20,6 +20,7 @@
     </head>
 
     <body onload="initialize()">
+        
         <?php include 'Menu.php'; ?>
 
 
