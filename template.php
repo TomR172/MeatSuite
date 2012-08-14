@@ -16,6 +16,7 @@
         <script type="text/javascript"
                 src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBq74_RDXdxbqgWKsFYzRPLHiCnmAysiNo&sensor=true">
         </script>
+        <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 
     </head>
 
