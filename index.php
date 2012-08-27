@@ -4,8 +4,8 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-include('config.php');
-include('functions.php');
+include('php/config.php');
+include('php/functions.php');
 
 
 if (!empty($_POST)) {
@@ -67,6 +67,6 @@ if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
 }
 
 $pageHeader = $pages[$currentPage]["header"];
-$pageFile = $currentPage . ".php";
+$pageFile = "php/pages/".$currentPage . ".php";
 
-include "template.php";
+include "php/template.php";
