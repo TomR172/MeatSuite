@@ -1,5 +1,5 @@
 <?php
-$tab = $_GET['tab'];
+    $tab = $_GET['tab'];
 ?>
 
 <div class="container-fluid">
