@@ -35,5 +35,5 @@
         </fieldset>
     </form>
 <?php else : ?>
-    <h2>Welcome, Matt!</h2>;
+    <h2>Welcome, <?php echo $_SESSION['user'] ?></h2>
 <?php endif ?>

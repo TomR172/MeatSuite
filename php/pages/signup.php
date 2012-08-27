@@ -22,13 +22,13 @@ $farmInfoOne = array(
     ),
     "email" => array(
         "name" => "email",
-        "title" => "Email"
+        "title" => "Email",
+        "optional" => true
     ),
-    /* 1 corresponds to the attribute being optional */
     "website" => array(
         "name" => "website",
         "title" => "Website",
-        "optional" => 1
+        "optional" => true
     )
 );
 
@@ -79,11 +79,9 @@ if(!empty($_POST)) {
     }
 
     foreach($values as $key => $value) {
-        if(trim($value) == "") {
-            if((!isset($farmInfoOne[$key])) || !isset($farmInfoOne[$key]['optional'])) {
-                $form_has_error = true;
-                $errors[$key] = "Please enter the " . $key;
-            }
+        if(trim($value) == "" && isset($farmInfoOne[$key]) && (!isset($farmInfoOne[$key]['optional']) || !$farmInfoOne[$key]['optional'])) {
+            $form_has_error = true;
+            $errors[$key] = "Please enter the " . $key;
         }
     }
 
@@ -120,7 +118,7 @@ if(!empty($_POST)) {
 
 
                              <?php
-                             if(isset($nameTitle['optional']) and $nameTitle['optional'] == 1) {
+                             if(isset($nameTitle['optional']) && $nameTitle['optional']) {
                                  echo 'warning';
                              } else if(isset($errors[$nameTitle['name']])) {
                                  echo 'error';

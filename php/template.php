@@ -21,8 +21,8 @@
         <script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
     </head>
 
-    <body onload="initialize()">
-        <?php include 'php/_menu.php'; ?>
+    <body>
+        <?php include 'php/partials/_menu.php'; ?>
 
         <div class="container">
             <div class="page-header">

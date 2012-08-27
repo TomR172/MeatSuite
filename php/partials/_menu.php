@@ -12,7 +12,7 @@
                     <?php foreach($pages as $page => $values) : ?>
                         <?php if(!isset($values['showInMenu']) || $values['showInMenu']) : ?>
                             <li class= "<?php if($page == $currentPage) echo 'active'; ?>">
-                                <a href="index.php?page=<?php echo $page; echo $page == 'learnMore'? '&tab=0' : '';?>">
+                                <a href="index.php?page=<?php echo $page; ?>">
                                     <?php echo $values["header"]; ?>
                                 </a>
                             </li>

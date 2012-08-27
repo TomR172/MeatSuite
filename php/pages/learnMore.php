@@ -1,5 +1,9 @@
 <?php
-    $tab = $_GET['tab'];
+    if(isset($_GET['tab'])) {
+        $tab = $_GET['tab'];
+    } else {
+        $tab = '0';
+    }
 ?>
 
 <div class="container-fluid">

@@ -65,58 +65,30 @@ $result = query($query);
             <th>Phone</th>
             <th>Email</th>
             <th>Website</th>
-            <th>Organic</th>
-            <th>Beef</th>
-            <th>Pork</th>
-            <th>Chicken</th>
+            <th>Categories</th>
             <?php if(loggedin()) : ?>
                 <th> Edit </th>
             <?php endif; ?>
             </thead>
 
-            <?php while($row = sanitize(mysql_fetch_array($result))) : ?>
+            <?php while($farm = sanitize(mysql_fetch_array($result))) : ?>
                 <tr>
                     <td class="farm"> 
-                        <a href="index.php?page=profile&id=<?php echo $row['id'] ?>" >
-                            <?php echo $row['FarmName'] ?> 
+                        <a href="index.php?page=profile&id=<?php echo $farm['id'] ?>" >
+                            <?php echo $farm['FarmName'] ?> 
                         </a>
                     </td>
-                    <td> <?php echo $row['owner'] ?></td>
-                    <td> <?php echo $row['address'] . " " . $row['csz'] ?></td>
-                    <td> <?php echo $row['phone'] ?></td>
-                    <td> <?php echo $row['email'] ?></td>
-                    <td> <a class = "link" href = "<?php echo $row['website'] ?>"> <?php echo $row['website'] ?> </a> </td>
-                    <td> <?php
-                        if($row['organic'] == 0) {
-                            echo 'No';
-                        } else {
-                            echo 'Yes';
-                        }
-                            ?></td>				
-                    <td> <?php
-                    if($row['beef'] == 0) {
-                        echo 'No';
-                    } else {
-                        echo 'Yes';
-                    }
-                            ?></td>				
-                    <td> <?php
-                    if($row['pork'] == 0) {
-                        echo 'No';
-                    } else {
-                        echo 'Yes';
-                    }
-                            ?></td>				
-                    <td> <?php
-                    if($row['chicken'] == 0) {
-                        echo 'No';
-                    } else {
-                        echo 'Yes';
-                    }
-                            ?></td>
+                    <td> <?php echo $farm['owner'] ?></td>
+                    <td> <?php echo $farm['address'] . " " . $farm['csz'] ?></td>
+                    <td> <?php echo $farm['phone'] ?></td>
+                    <td> <?php echo $farm['email'] ?></td>
+                    <td> <a class = "link" href = "<?php echo $farm['website'] ?>"> <?php echo $farm['website'] ?> </a> </td>
+                    <td>
+                        <?php include('php/partials/_farmCategories.php'); ?>
+                    </td>
                     <?php if(loggedin()) : ?>
                         <td> 
-                            <a class="btn" href = "index.php?page=signup&id=<?php echo $row['id']; ?>" >Edit </a>
+                            <a class="btn" href = "index.php?page=signup&id=<?php echo $farm['id']; ?>" >Edit </a>
                         </td>
                     <?php endif; ?>
                 </tr>
