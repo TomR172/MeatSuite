@@ -13,7 +13,7 @@ if (!loggedin()) {
                            value= <?php echo isset($_POST['user']) ? $_POST['user'] : '' ?>
                            >   
 
-                    <?php if (isset($_POST['user']) && $_POST['user']!=USER) : ?>
+                    <?php if (isset($_POST['user']) && $_POST['user'] != USER) : ?>
                         <br><span class="help-inline">Please enter your name</span>                            
                     <?php endif; ?>         
 
