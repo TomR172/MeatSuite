@@ -8,19 +8,19 @@
             <div class="well sidebar-nav  learnList">
                 <ul class ="nav nav-list learnList">
                     <li>
-                        <a href="index.php?page=learnmore&tab=1" > Claims and Definitions </a>
+                        <a href="index.php?page=learnMore&tab=1" > Claims and Definitions </a>
                     </li>
                     <li>
-                        <a href="index.php?page=learnmore&tab=2" > Common Cattle Breeds </a>
+                        <a href="index.php?page=learnMore&tab=2" > Common Cattle Breeds </a>
                     </li>
                     <li>
-                        <a href="index.php?page=learnmore&tab=3" > Descriptions of Types of Livestock Feeds </a>
+                        <a href="index.php?page=learnMore&tab=3" > Descriptions of Types of Livestock Feeds </a>
                     </li>
                     <li>
-                        <a href="index.php?page=learnmore&tab=4" > Understanding Weights and Pricing </a>
+                        <a href="index.php?page=learnMore&tab=4" > Understanding Weights and Pricing </a>
                     </li>
                     <li>
-                        <a href="index.php?page=learnmore&tab=5" > USDA and NYS Regulations</a>
+                        <a href="index.php?page=learnMore&tab=5" > USDA and NYS Regulations</a>
                     </li>
                 </ul>
             </div>
