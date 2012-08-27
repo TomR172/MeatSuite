@@ -39,7 +39,7 @@ $pages = array(
         "header" => "Profile",
         "showInMenu" => false
     ),
-    "learnmore" => array(
+    "learnMore" => array(
         "header" => "Learn More"
     ),
     "description" => array(
