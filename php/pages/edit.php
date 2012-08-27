@@ -1,7 +1,7 @@
 <?php
-$desc = query("SELECT * FROM farms WHERE id=" . db_sanitize($_GET['id']) . "");
-$row = mysql_fetch_array($desc);
-$row = sanitize($row);
+    $desc = query("SELECT * FROM farms WHERE id=" . db_sanitize($_GET['id']) . "");
+    $row = mysql_fetch_array($desc);
+    $row = sanitize($row);
 ?>
 
 <table border='1' class="table table-condensed table-striped">
@@ -34,7 +34,7 @@ $row = sanitize($row);
 </tr>
 </table>
 
-<?php include ('singup.php'); ?>
+<?php include ('signup.php'); ?>
 
 <form method="get" action="index.php">
     <input type="text" name="search" size="30" maxlength="50">

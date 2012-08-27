@@ -7,19 +7,17 @@ ini_set('display_errors', '1');
 include('php/config.php');
 include('php/functions.php');
 
-
-if (!empty($_POST)) {
-    if (isset($_POST['user']) && $_POST['user'] == USER) {
-        if (isset($_POST['password']) && $_POST['password'] == PASS) {
+if(!empty($_POST)) {
+    if(isset($_POST['user']) && $_POST['user'] == USER) {
+        if(isset($_POST['password']) && $_POST['password'] == PASS) {
             $_SESSION['user'] = USER;
         }
     }
 }
 
-if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+if(isset($_GET['logout']) && $_GET['logout'] == 1) {
     $_SESSION['user'] = null;
 }
-
 
 $pages = array(
     "home" => array(
@@ -60,13 +58,13 @@ $pages = array(
     )
 );
 
-if (isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
+if(isset($_GET ["page"]) && isset($pages[$_GET["page"]])) {
     $currentPage = $_GET["page"];
 } else {
     $currentPage = "home";
 }
 
 $pageHeader = $pages[$currentPage]["header"];
-$pageFile = "php/pages/".$currentPage . ".php";
+$pageFile = "php/pages/" . $currentPage . ".php";
 
 include "php/template.php";

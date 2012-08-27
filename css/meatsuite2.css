@@ -5,8 +5,8 @@
 }
 
 .pageName {
-	color:#000000;
-	text-shadow: #8e4e24 0.1em 0.1em 0.2em;
+    color:#000000;
+    text-shadow: #8e4e24 0.1em 0.1em 0.2em;
 }
 
 .learnList li a {
@@ -14,12 +14,12 @@
 }
 
 .firstWord{
-	font-weight:bold;
-        color: #b82820;
+    font-weight:bold;
+    color: #b82820;
 }
 
 .learnList li a:hover{
-	color:#b82820;
+    color:#b82820;
 }
 
 .brownTable {

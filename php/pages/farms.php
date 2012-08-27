@@ -1,19 +1,19 @@
 <?php
 $query = "SELECT * FROM farms WHERE 1";
 
-if (isset($_GET['search']) && trim($_GET['search']) != "") {
+if(isset($_GET['search']) && trim($_GET['search']) != "") {
     $query .= " AND farmName LIKE '%" . db_sanitize($_GET['search']) . "%'";
 }
-if (isset($_GET['Beef'])) {
+if(isset($_GET['Beef'])) {
     $query .= " AND beef=1";
 }
-if (isset($_GET['Pork'])) {
+if(isset($_GET['Pork'])) {
     $query .= " AND pork=1";
 }
-if (isset($_GET['Chicken'])) {
+if(isset($_GET['Chicken'])) {
     $query .= " AND chicken=1";
 }
-if (isset($_GET['Organic'])) {
+if(isset($_GET['Organic'])) {
     $query .= " AND organic=1";
 }
 
@@ -35,22 +35,22 @@ $result = query($query);
                 <a class="<?php echo isset($_GET['Organic']) ? 'btn btn-danger' : 'btn btn-inverse' ?>" href="index.php?page=farms&Organic=1">Organic</a>
             </div>
         </form>
-        <?php if (isset($_GET['search'])) : ?>
+        <?php if(isset($_GET['search'])) : ?>
             Showing <?php echo mysql_num_rows($result) ?> results for search term "
             <i>
                 `           <?php echo htmlspecialchars($_GET['search']) ?>
             </i>". 
             <a href="index.php?page=farms">Clear search</a><br/>
-        <?php elseif (isset($_GET['Beef'])) : ?>
+        <?php elseif(isset($_GET['Beef'])) : ?>
             Showing <?php echo mysql_num_rows($result) ?> results for beef
             <a href="index.php?page=farms">Clear search</a><br/>
-        <?php elseif (isset($_GET['Pork'])) : ?>
+        <?php elseif(isset($_GET['Pork'])) : ?>
             Showing <?php echo mysql_num_rows($result) ?> results for pork.
             <a href="index.php?page=farms">Clear search</a><br/>
-        <?php elseif (isset($_GET['Chicken'])) : ?>
+        <?php elseif(isset($_GET['Chicken'])) : ?>
             Showing <?php echo mysql_num_rows($result) ?> results for chicken.
             <a href="index.php?page=farms">Clear search</a><br/>
-        <?php elseif (isset($_GET['Organic'])) : ?>
+        <?php elseif(isset($_GET['Organic'])) : ?>
             Showing <?php echo mysql_num_rows($result) ?> results for search organic.
             <a href="index.php?page=farms">Clear search</a><br/>
         <?php endif ?>
@@ -69,18 +69,16 @@ $result = query($query);
             <th>Beef</th>
             <th>Pork</th>
             <th>Chicken</th>
-            <?php
-            if (loggedin()) {
-                echo "<th> Edit </th>";
-            }
-            ?>
+            <?php if(loggedin()) : ?>
+                <th> Edit </th>
+            <?php endif; ?>
             </thead>
 
-<?php while ($row = sanitize(mysql_fetch_array($result))) { ?>
+            <?php while($row = sanitize(mysql_fetch_array($result))) : ?>
                 <tr>
                     <td class="farm"> 
                         <a href="index.php?page=profile&id=<?php echo $row['id'] ?>" >
-    <?php echo $row['FarmName'] ?> 
+                            <?php echo $row['FarmName'] ?> 
                         </a>
                     </td>
                     <td> <?php echo $row['owner'] ?></td>
@@ -89,45 +87,40 @@ $result = query($query);
                     <td> <?php echo $row['email'] ?></td>
                     <td> <a class = "link" href = "<?php echo $row['website'] ?>"> <?php echo $row['website'] ?> </a> </td>
                     <td> <?php
-                    if ($row['organic'] == 0) {
-                        echo 'No';
-                    } else {
-                        echo 'Yes';
-                    }
-    ?></td>				
+                        if($row['organic'] == 0) {
+                            echo 'No';
+                        } else {
+                            echo 'Yes';
+                        }
+                            ?></td>				
                     <td> <?php
-                    if ($row['beef'] == 0) {
+                    if($row['beef'] == 0) {
                         echo 'No';
                     } else {
                         echo 'Yes';
                     }
-    ?></td>				
+                            ?></td>				
                     <td> <?php
-                    if ($row['pork'] == 0) {
+                    if($row['pork'] == 0) {
                         echo 'No';
                     } else {
                         echo 'Yes';
                     }
-    ?></td>				
+                            ?></td>				
                     <td> <?php
-                    if ($row['chicken'] == 0) {
+                    if($row['chicken'] == 0) {
                         echo 'No';
                     } else {
                         echo 'Yes';
                     }
-    ?></td>
-                    <?php if (loggedin()) {
-                        echo '<td> 
-                        
-
-                     <a class="btn" href = "index.php?page=signup&id='.$row['id'].'" >Edit </a>
-
-
-</td> ';
-                    }
-                    ?>                
+                            ?></td>
+                    <?php if(loggedin()) : ?>
+                        <td> 
+                            <a class="btn" href = "index.php?page=signup&id=<?php echo $row['id']; ?>" >Edit </a>
+                        </td>
+                    <?php endif; ?>
                 </tr>
-<?php } ?>
+            <?php endwhile ?>
         </table>
     </div>
 </div>

@@ -36,7 +36,7 @@ function query($query, $insert_id = false)
     if(!$result) {
         echo "Error: " . mysql_error();
     }
-    
+
     if($insert_id)
         $result = mysql_insert_id();
 
@@ -57,7 +57,8 @@ function insert($table, $values, $echo_query = false)
     $set_expression = sql_set_expression($values);
     $query = 'INSERT INTO ' . $table . ' SET ' . $set_expression;
 
-    if($echo_query) echo $query.'<br/>';
+    if($echo_query)
+        echo $query . '<br/>';
 
     $insert_id = query($query, true);
 
@@ -77,7 +78,8 @@ function update($table, $values, $constraints, $echo_query = false)
 
     $query = 'UPDATE ' . $table . ' SET ' . $set_expression . ' WHERE ' . $constraints;
 
-    if($echo_query) echo $query.'<br/>';
+    if($echo_query)
+        echo $query . '<br/>';
 
     query($query);
 }
@@ -103,25 +105,29 @@ function sql_set_expression($values)
     return $set_expression;
 }
 
-function db_sanitize($value) {
-        $link = connect_to_db();
-        return mysql_real_escape_string($value, $link);
+function db_sanitize($value)
+{
+    $link = connect_to_db();
+    return mysql_real_escape_string($value, $link);
 }
 
-function sanitize($value) {
-        if(is_array($value)) {
-                $value_array = array();
-                foreach($value as $k => $v) {
-                        $value_array[$k] = sanitize($v);
-                }
-                return $value_array;
-        } else {
-                if(get_magic_quotes_gpc()) $value = stripslashes($value);
-                $value = htmlspecialchars($value);
-                return $value;
+function sanitize($value)
+{
+    if(is_array($value)) {
+        $value_array = array();
+        foreach($value as $k => $v) {
+            $value_array[$k] = sanitize($v);
         }
+        return $value_array;
+    } else {
+        if(get_magic_quotes_gpc())
+            $value = stripslashes($value);
+        $value = htmlspecialchars($value);
+        return $value;
+    }
 }
 
-function loggedin() {
+function loggedin()
+{
     return isset($_SESSION['user']);
 }

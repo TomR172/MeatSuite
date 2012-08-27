@@ -1,12 +1,11 @@
-
 <script type="text/javascript">
     function initialize() {
         
         geocoder = new google.maps.Geocoder();
 
         var loc = geocoder.geocode({"address": "1600 Amphitheatre Parkway, Mountain View, CA"},
-                    function(data, status)
-                    {console.log(data);});
+        function(data, status)
+        {console.log(data);});
 
         var mapOptions = {
             center: new google.maps.LatLng(42.4406, -76.4969),
@@ -15,7 +14,7 @@
         };
         
         var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
+        mapOptions);
                 
         //var marker = new google.maps.Marker({
         //    map: map,
@@ -25,16 +24,16 @@
         geocoder = new google.maps.Geocoder();
 
         geocoder.geocode( {'address': '615 Willow Ave Ithaca NY 14850' },
-            function(data, status) {
-                mapLocation = data[0].geometry.location;
-                var marker = new google.maps.Marker({
-                    position: mapLocation, 
-                    map: map
-                });
-                
-                map.setCenter(marker.getPosition());
-
+        function(data, status) {
+            mapLocation = data[0].geometry.location;
+            var marker = new google.maps.Marker({
+                position: mapLocation, 
+                map: map
             });
+                
+            map.setCenter(marker.getPosition());
+
+        });
             
     }
 </script>

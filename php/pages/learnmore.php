@@ -1,3 +1,7 @@
+<?php
+$tab = $_GET['tab'];
+?>
+
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3">
@@ -22,10 +26,7 @@
             </div>
         </div>
         <div class="span9">
-            <?php
-            $tab = $_GET['tab'];
-            if ($tab == 1) :
-                ?>
+            <?php if($tab == 1) : ?>
                 <div class="learnHeader">
                     <h2>CLAIMS AND DEFINITIONS</h2>
                     <h3 class="subtitle">Commonly Used Claims and Definitions for Meats</h3>
@@ -43,7 +44,7 @@
 
                     <p><div class="firstWord">Dry-aged</div>  Beef which is stored in a temperature and humidity controlled environment for 20 or more days. The ageing enhances the flavor and tenderness of the beef.</p>
                 </div>
-<?php elseif ($tab == 2) : ?>
+            <?php elseif($tab == 2) : ?>
                 <div class="learnHeader">
                     <h2 class="title">COMMON CATTLE BREEDS</h2>
                 </div>
@@ -74,7 +75,7 @@
                         <li>Milking Shorthorn</li>
                     </ul>
                 </div>
-<?php elseif ($tab == 3) : ?>
+            <?php elseif($tab == 3) : ?>
                 <div class="learnHeader">
                     <h2 class="title">DESCRIPTIONS OF TYPES OF LIVESTOCK FEEDS</h2>
                 </div>
@@ -92,7 +93,7 @@
 
                     <p><div class="firstWord">Cracked corn</div>Dry, whole kernel corn which is ground into smaller pieces.</p>
                 </div>
-<?php elseif ($tab == 4) : ?>
+            <?php elseif($tab == 4) : ?>
                 <div class="learnHeader">
                     <h2 class="title">UNDERSTANDING WEIGHTS AND PRODUCTS</h2>
                     <h3 class="subtitle">Learn about Local Meats Weights and Pricing</h3>
@@ -107,7 +108,7 @@
 
                     <p><div class="firstWord">Final Weight</div>The "take home" weight after trim and cutting into useable portions.  Final weight  � 65% of HCW.</p>
                 </div>
-<?php elseif ($tab == 5) : ?>
+            <?php elseif($tab == 5) : ?>
                 <div class="learnHeader">
                     <h2 class="title">USDA AND NYS REGULATIONS</h2>
                     <h3 class="subtitle">USDA and NYS Regulations for meat sales</h3>
@@ -124,7 +125,7 @@
                 </div>
             <?php else : ?>
                 <p>You can learn more about Tompkins Farms from the links to the left </p>
-<?php endif; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>

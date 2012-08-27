@@ -1,7 +1,9 @@
 <html>
     <head>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
         <title>MeatSuite</title>
+
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="css/meatsuite2.css" />
         <style>
@@ -17,19 +19,16 @@
                 src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBq74_RDXdxbqgWKsFYzRPLHiCnmAysiNo&sensor=true">
         </script>
         <script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
-
     </head>
 
     <body onload="initialize()">
-        
         <?php include 'php/_menu.php'; ?>
-
 
         <div class="container">
             <div class="page-header">
                 <h2 class="pageName">
                     <?php
-                    if ($pageHeader == 'Profile') {
+                    if($pageHeader == 'Profile') {
                         $desc = query("SELECT * FROM farms WHERE id='" . db_sanitize($_GET['id']) . "'");
                         $row = mysql_fetch_array($desc);
                         echo $row['FarmName'];
@@ -40,12 +39,11 @@
                 </h2>
             </div>
             <?php include $pageFile; ?>
-            <br style= "clear: both;"/>
+            <br style="clear: both;"/>
         </div>	
 
-        <footer style= "background-color:#b82820;">
-            <img id ="Tompkins" src="http://ccetompkins.org/sites/all/themes/ccetompkins/images/logo.jpg" />
+        <footer style="background-color:#b82820;">
+            <img id="Tompkins" src="http://ccetompkins.org/sites/all/themes/ccetompkins/images/logo.jpg" />
         </footer>
     </body>
-
 </html>

@@ -1,6 +1,4 @@
-<?php
-if (!loggedin()) {
-    ?>
+<?php if (!loggedin()) : ?>
     <form class="form-vertical" action="index.php?page=admin" method ="post"
           style="padding-top:10px;">
         <fieldset>
@@ -36,11 +34,6 @@ if (!loggedin()) {
             </div>
         </fieldset>
     </form>
-<?php
-}
-else {
-    ?>
+<?php else : ?>
     <h2>Welcome, Matt!</h2>;
-    <?php
-}
-?>
+<?php endif ?>
