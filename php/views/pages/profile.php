@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <?php
-    $desc = query("SELECT * FROM farms WHERE id=" . db_sanitize($_GET['id']) . "");
+    $desc = Database::query("SELECT * FROM farms WHERE id=" . Security::sanitizeForDatabase($_GET['id']) . "");
     $farm = mysql_fetch_array($desc);
-    $farm = sanitize($farm);
+    $farm = Security::sanitizeForFrontend($farm);
     ?>
 
     <script type="text/javascript">
@@ -50,7 +50,7 @@
             </p>
 
             <h4>Categories:</h4>
-            <?php include('php/partials/_farmCategories.php'); ?>
+            <?php include('php/views/partials/_farmCategories.php'); ?>
 
         </div>       
         <div class="span8">

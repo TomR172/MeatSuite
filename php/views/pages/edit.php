@@ -1,7 +1,7 @@
 <?php
-    $desc = query("SELECT * FROM farms WHERE id=" . db_sanitize($_GET['id']) . "");
+    $desc = Database::query("SELECT * FROM farms WHERE id=" . Security::dbSanitize($_GET['id']) . "");
     $row = mysql_fetch_array($desc);
-    $row = sanitize($row);
+    $row = Security::frontendSanitize($row);
 ?>
 
 <table border='1' class="table table-condensed table-striped">

@@ -9,21 +9,21 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3">
-            <div class="well sidebar-nav  learnList">
-                <ul class ="nav nav-list learnList">
-                    <li>
+            <div class="well sidebar-nav">
+                <ul class ="nav nav-list">
+                    <li class="<?php echo $tab == "1" ? 'active' : ''?>">
                         <a href="index.php?page=learnMore&tab=1" > Claims and Definitions </a>
                     </li>
-                    <li>
+                    <li class="<?php echo $tab == "2" ? 'active' : ''?>">
                         <a href="index.php?page=learnMore&tab=2" > Common Cattle Breeds </a>
                     </li>
-                    <li>
+                    <li class="<?php echo $tab == "3" ? 'active' : ''?>">
                         <a href="index.php?page=learnMore&tab=3" > Descriptions of Types of Livestock Feeds </a>
                     </li>
-                    <li>
+                    <li class="<?php echo $tab == "4" ? 'active' : ''?>">
                         <a href="index.php?page=learnMore&tab=4" > Understanding Weights and Pricing </a>
                     </li>
-                    <li>
+                    <li class="<?php echo $tab == "5" ? 'active' : ''?>">
                         <a href="index.php?page=learnMore&tab=5" > USDA and NYS Regulations</a>
                     </li>
                 </ul>
@@ -31,9 +31,9 @@
         </div>
         <div class="span9">
             <?php if($tab == 1) : ?>
-                <div class="learnHeader">
+                <div>
                     <h2>CLAIMS AND DEFINITIONS</h2>
-                    <h3 class="subtitle">Commonly Used Claims and Definitions for Meats</h3>
+                    <h3>Commonly Used Claims and Definitions for Meats</h3>
                 </div>
                 <div>
                     <p><div class="firstWord">Natural</div>The USDA's definition is only "minimally processed". The term is commonly used on products raised without antibiotics in the feed or hormone implants.</p>
@@ -49,10 +49,10 @@
                     <p><div class="firstWord">Dry-aged</div>  Beef which is stored in a temperature and humidity controlled environment for 20 or more days. The ageing enhances the flavor and tenderness of the beef.</p>
                 </div>
             <?php elseif($tab == 2) : ?>
-                <div class="learnHeader">
-                    <h2 class="title">COMMON CATTLE BREEDS</h2>
+                <div>
+                    <h2>COMMON CATTLE BREEDS</h2>
                 </div>
-                <div class="marginize">
+                <div>
                     <p>Consumers may wish to be aware of the various breeds of livestock that are raised by local producers.  Some of the more widely available breeds are listed below.  For information on these breeds, visit to the Oklahoma State University Department of Animal Science which maintains comprehensive descriptions of livestock breeds.</p>
 
                     <div class="firstWord">Beef</div>
@@ -80,8 +80,8 @@
                     </ul>
                 </div>
             <?php elseif($tab == 3) : ?>
-                <div class="learnHeader">
-                    <h2 class="title">DESCRIPTIONS OF TYPES OF LIVESTOCK FEEDS</h2>
+                <div>
+                    <h2>DESCRIPTIONS OF TYPES OF LIVESTOCK FEEDS</h2>
                 </div>
                 <div class="marginize">
 
@@ -98,12 +98,11 @@
                     <p><div class="firstWord">Cracked corn</div>Dry, whole kernel corn which is ground into smaller pieces.</p>
                 </div>
             <?php elseif($tab == 4) : ?>
-                <div class="learnHeader">
-                    <h2 class="title">UNDERSTANDING WEIGHTS AND PRODUCTS</h2>
-                    <h3 class="subtitle">Learn about Local Meats Weights and Pricing</h3>
+                <div>
+                    <h2>UNDERSTANDING WEIGHTS AND PRODUCTS</h2>
+                    <h3>Learn about Local Meats Weights and Pricing</h3>
                 </div>
-                <div class="marginize">
-
+                <div>
                     Farmers may discuss three different weights with consumers: Live weight, hot carcass weight (HCW) (also called hanging weight), and Final weight (also called retail weight and take home weight).
 
                     <p><div class="firstWord">Live Weight</div>The weight of the entire, living animal.</p>
@@ -113,11 +112,11 @@
                     <p><div class="firstWord">Final Weight</div>The "take home" weight after trim and cutting into useable portions.  Final weight  � 65% of HCW.</p>
                 </div>
             <?php elseif($tab == 5) : ?>
-                <div class="learnHeader">
-                    <h2 class="title">USDA AND NYS REGULATIONS</h2>
-                    <h3 class="subtitle">USDA and NYS Regulations for meat sales</h3>
+                <div>
+                    <h2>USDA AND NYS REGULATIONS</h2>
+                    <h3>USDA and NYS Regulations for meat sales</h3>
                 </div>
-                <div class="marginize">
+                <div>
 
                     <p><div class="firstWord">USDA Inspected Facility </div>Processed livestock (beef, pork, sheep, goat) meat can be sold to the public.</p>
 

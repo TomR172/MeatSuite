@@ -86,7 +86,7 @@ if(!empty($_POST)) {
     }
 
     if(!$form_has_error) {
-        $insert_id = insert('farms', $values);
+        $insert_id = Database::insert('farms', $values);
     }
 
     if(isset($insert_id) && $insert_id) {
