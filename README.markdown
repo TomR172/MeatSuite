@@ -7,12 +7,12 @@
 * js - native js
 * sql - native sql
 * php - native php
-** lib - classes and functions for interactive with the database, managing sessions, page routing, etc.
-** views - php scripts that generate and display html
-*** pages - the main pages of the site
-*** partials - snippets of code used from within pages
-*** template.php - the main template used for each page
-** scripts - php scripts that should redirect to a page with content
+    * lib - classes and functions for interactive with the database, managing sessions, page routing, etc.
+    * views - php scripts that generate and display html
+        * pages - the main pages of the site
+        * partials - snippets of code used from within pages
+        * template.php - the main template used for each page
+    * scripts - php scripts that should redirect to a page with content
 * index.php - the site's front controller
 
 All requests should be routed through ``index.php`` - the site's front controller.
