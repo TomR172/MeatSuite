@@ -47,7 +47,7 @@
                     <a href="mailto:mnl28@cornell.edu">Contact</a> |
                     <a href="?page=signup">Sign Up</a>
                     <?php if(!User::loggedIn()) : ?>
-                        <a href="?page=login">Admin Login</a>
+                        | <a href="?page=login">Admin Login</a>
                     <?php endif; ?>
                 </p>
             </footer>

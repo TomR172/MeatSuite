@@ -15,7 +15,6 @@ class Routing
             'signup' => new Page('signup', array('label' => 'Sign Up', 'showInMenu' => false)),
             'profile' => new Page('profile', array('showInMenu' => false)),
             'learnMore' => new Page('learnMore', array('label' => 'Learn More')),
-            'map' => new Page('map', array('showInMenu' => false)),
             'login' => new Page('login', array('showInMenu' => false)),
             'edit' => new Page('edit', array('showInMenu' => false))
         );

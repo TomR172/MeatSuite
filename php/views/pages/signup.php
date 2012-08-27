@@ -23,7 +23,6 @@ $farmInfoOne = array(
     "email" => array(
         "name" => "email",
         "title" => "Email",
-        "optional" => true
     ),
     "website" => array(
         "name" => "website",
@@ -99,7 +98,6 @@ if(!empty($_POST)) {
 
 <form class="form-vertical" action="index.php?page=signup" method ="post"
       style="padding-top:10px;">
-    <div class="container-fluid">
         <?php if(isset($error_message)) : ?>
             <div class="row">
                 <div class="span12">
@@ -182,5 +180,4 @@ if(!empty($_POST)) {
                 </div>
             </div>
         </div>
-    </div>
 </form>
