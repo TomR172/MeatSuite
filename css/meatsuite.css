@@ -10,6 +10,7 @@ body {
 footer img.cce-logo {
     width: 200px;
     float: right;
+    margin-bottom: 20px;
 }
 
 footer p {
