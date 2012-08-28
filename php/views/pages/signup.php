@@ -128,13 +128,8 @@ if(!empty($_POST)) {
                             </label>
                             <div class="controls">
                                 <input id="<?php echo $nameTitle['name'] ?>" type="text" name="<?php echo $nameTitle['name'] ?>"  
-                                       value=" <?php
-                            if(!empty($values[$nameTitle['name']])) {
-                                echo $values[$nameTitle['name']];
-                            }
-                                ?>"
-                                       >
-                                       <?php if(isset($errors[$nameTitle['name']])) : ?>
+                                       value="<?php if(!empty($values[$nameTitle['name']])) echo $values[$nameTitle['name']]; ?>" />
+                                <?php if(isset($errors[$nameTitle['name']])) : ?>
                                     <span class="help-inline"><?php echo $errors[$nameTitle['name']]; ?></span>                            
                                 <?php endif; ?>                                    
                             </div>
@@ -176,7 +171,7 @@ if(!empty($_POST)) {
         <div class="row">
             <div class="span8 offset2">
                 <div class="form-actions">
-                    <input class="btn btn-inverse" type="submit" value = "Submit"/>
+                    <input class="btn btn-inverse" type="submit" value="Sign Up"/>
                 </div>
             </div>
         </div>
