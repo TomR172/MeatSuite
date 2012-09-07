@@ -28,10 +28,10 @@ if(isset($_GET['showMap']) && $_GET['showMap'] == 'true') {
 ?>
 <div class="container-fluid">
     <div>
-        <ul class="nav nav-pills pull-left">
-            <li class="<?php echo $showMap? '' : 'active'; ?>"><a href="?page=farms&showMap=false&all=1">List</a></li>
-            <li class="<?php echo $showMap? 'active' : ''; ?>"><a href="?page=farms&showMap=true">Map</a></li>
-        </ul>
+        <div class="btn-group pull-left">
+            <a href="?page=farms&showMap=false&all=1" class="btn <?php echo $showMap? '' : 'active'; ?>"><i class="icon-list"></i> List</a>
+            <a href="?page=farms&showMap=true" class="btn <?php echo $showMap? 'active' : ''; ?>"><i class="icon-map-marker"></i> Map</a>
+        </div>
         
         <form method="get" action="index.php" class="form-search pull-right">
             <input type="hidden" name = "page" value = "farms">
